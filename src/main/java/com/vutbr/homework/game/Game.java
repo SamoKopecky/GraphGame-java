@@ -1,5 +1,8 @@
 package com.vutbr.homework.game;
 
+
+import org.dom4j.Element;
+
 public class Game {
 
     private GameMap map = new GameMap();
@@ -17,6 +20,7 @@ public class Game {
     }
 
     public static void main(String args[]) {
+        Element e;
         Game game = new Game();
         game.startGame();
         game.gameCycle();
