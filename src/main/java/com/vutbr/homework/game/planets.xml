@@ -1,0 +1,20 @@
+<Map>
+    <node id="0">
+        <name>Earth</name>
+    </node>
+    <node id="1">
+        <name>Mars</name>
+    </node>
+    <node id="2">
+        <name>Saturn</name>
+    </node>
+    <node id="3">
+        <name>Uranus</name>
+    </node>
+    <node id="4">
+        <name>Venus</name>
+    </node>
+    <node id="5">
+        <name>Pluto</name>
+    </node>
+</Map>
