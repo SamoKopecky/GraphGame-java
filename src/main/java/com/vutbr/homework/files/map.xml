@@ -1,0 +1,54 @@
+<Planets>
+    <planet id="0">
+        <name>Earth</name>
+        <neighbours>
+            <neighbour>
+                <neighbourId>5</neighbourId>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourId>1</neighbourId>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+    </planet>
+    <planet id="1">
+        <name>Mars</name>
+        <neighbours>
+            <neighbour>
+                <neighbourId>3</neighbourId>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+    </planet>
+    <planet id="2">
+        <name>Saturn</name>
+        <neighbours>
+            <neighbour>
+            <neighbourId>0</neighbourId>
+            <path>200</path>
+            </neighbour>
+        </neighbours>
+    </planet>
+    <planet id="3">
+        <name>Uranus</name>
+        <neighbours>
+            <neighbour>
+            <neighbourId>4</neighbourId>
+            <path>200</path>
+            </neighbour>
+        </neighbours>
+    </planet>
+    <planet id="4">
+        <name>Venus</name>
+        <neighbours>
+            <neighbour>
+            <neighbourId>2</neighbourId>
+            <path>200</path>
+            </neighbour>
+        </neighbours>
+    </planet>
+    <planet id="5">
+        <name>Pluto</name>
+    </planet>
+</Planets>

@@ -1,16 +1,16 @@
 package com.vutbr.homework.nodes;
 
 import com.vutbr.homework.paths.Path;
-
 import java.util.HashMap;
 import java.util.Map;
 
-public class Node {
+public class Planet {
     private String name;
     private int id;
-    private Map<Node, Path> neighbours = new HashMap<>();
+    private Map<Planet, Path> neighbours;
 
-    public Node(String name, int id) {
+    public Planet(String name, int id) {
+        this.neighbours = new HashMap<>();
         this.name = name;
         this.id = id;
     }
@@ -23,11 +23,11 @@ public class Node {
         return id;
     }
 
-    public Map<Node, Path> getNeighbours() {
+    public Map<Planet, Path> getNeighbours() {
         return neighbours;
     }
 
-    public void setNeighbour(Node node, Path path) {
-        this.neighbours.put(node, path);
+    public void setNeighbour(Planet planet, Path path) {
+        this.neighbours.put(planet, path);
     }
 }

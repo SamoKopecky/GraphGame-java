@@ -1,13 +1,10 @@
 package com.vutbr.homework.game;
 
-
-import org.dom4j.Element;
-
 public class Game {
 
     private GameMap map = new GameMap();
 
-    private void startGame() {
+    private void startGame() throws Exception {
         map = new GameMap();
         map.generateMap();
     }
@@ -19,8 +16,7 @@ public class Game {
         }
     }
 
-    public static void main(String args[]) {
-        Element e;
+    public static void main(String[] args) throws Exception {
         Game game = new Game();
         game.startGame();
         game.gameCycle();

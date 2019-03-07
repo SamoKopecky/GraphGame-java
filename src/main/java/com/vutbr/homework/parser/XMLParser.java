@@ -1,26 +1,35 @@
 package com.vutbr.homework.parser;
 
 
-import java.io.File;
-import java.util.List;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import java.io.IOException;
 
 public class XMLParser {
 
-    /*public static Document XMLParse(String fileName) {
-        Document document = null;
-        File file = new File(fileName);
-        SAXReader reader = new SAXReader();
-        try {
-            document = reader.read(file);
-        } catch (DocumentException e) {
-            e.printStackTrace();
-        }
+    public static NodeList XMLParse(String fileName, String nodeName) throws
+            ParserConfigurationException,
+            IOException,
+            SAXException,
+            XPathExpressionException {
 
-        assert document != null;
-        List<Node> list = document.selectNodes("/map/planet");
-        System.out.println(list.get(0).getName());
-
-        return document;
-    }*/
+        DocumentBuilder dBuilder;
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        dBuilder = dbFactory.newDocumentBuilder();
+        Document document = dBuilder.parse(fileName);
+        document.getDocumentElement().normalize();
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        return (NodeList) xPath.compile(nodeName).evaluate(document, XPathConstants.NODESET);
+    }
 }
