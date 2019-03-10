@@ -1,5 +1,7 @@
 package com.vutbr.homework.game;
 
+import com.vutbr.homework.nodes.EndPlanet;
+import com.vutbr.homework.nodes.OrdinaryPlanet;
 import com.vutbr.homework.nodes.Planet;
 import com.vutbr.homework.parser.XMLParser;
 import com.vutbr.homework.paths.Path;
@@ -22,12 +24,17 @@ public class GameMap {
         nodeList = XMLParser.XMLParse(XML_PATH, "//planet");
         for (int i = 0; i < nodeList.getLength(); i++) {
             element = (Element) nodeList.item(i);
-            listOfPlanets.add(new Planet(element.getElementsByTagName("name").item(0).getTextContent(), i));
+            String planetType = element.getElementsByTagName("type").item(0).getTextContent();
+            if (planetType.equals("none")) {
+                listOfPlanets.add(new OrdinaryPlanet(element.getElementsByTagName("name").item(0).getTextContent(), i));
+            } else if (planetType.equals("end")) {
+                listOfPlanets.add(new EndPlanet(element.getElementsByTagName("name").item(0).getTextContent(), i));
+            }
         }
 
         for (int i = 0; i < nodeList.getLength(); i++) {
             element = (Element) nodeList.item(i);
-            NodeList neighbours = element.getElementsByTagName("neighbourId");
+            NodeList neighbours = element.getElementsByTagName("neighbourID");
             for (int j = 0; j < neighbours.getLength(); j++) {
                 int neighbourID = Integer.parseInt(neighbours.item(j).getTextContent());
                 listOfPlanets.get(i).setNeighbour(listOfPlanets.get(neighbourID), new Path());
@@ -39,10 +46,11 @@ public class GameMap {
 
     public void printNeighbours() {
         int i = 0;
+        System.out.println("Nachadzas sa na planete : " + this.currentPlanet.getName());
         System.out.println("Mozes letiet na planety : ");
         for (Map.Entry<Planet, Path> entry : this.currentPlanet.getNeighbours().entrySet()) {
-            System.out.println(ALPHABET[i] + ": Na planetu " + entry.getKey().getId() +
-                    " ktora je vzdialena " + entry.getValue().getLength() + " jednotiek.");
+            System.out.println(ALPHABET[i] + ": Na planetu " + entry.getKey().getName() + "(" + entry.getKey().getId() +
+                    ") ktora je vzdialena " + entry.getValue().getLength() + " jednotiek.");
             i++;
         }
     }
@@ -52,6 +60,7 @@ public class GameMap {
         char nextNode;
         int i = 0;
         Map<Character, Planet> choice = new HashMap<>();
+        boolean isCharInMap = false;
 
         for (Planet planet : this.currentPlanet.getNeighbours().keySet()) {
             choice.put(ALPHABET[i], planet);
@@ -59,10 +68,15 @@ public class GameMap {
         }
 
         System.out.println("Tvoje volba je :");
-        nextNode = Character.toUpperCase(sc.next().charAt(0));
+        do {
+            nextNode = Character.toUpperCase(sc.next().charAt(0));
+            if (choice.keySet().contains(nextNode)) {
+                isCharInMap = true;
+            } else {
+                System.out.println("Zvol si pismeno z listu planet na obrazovke !");
+            }
+        } while (!isCharInMap);
 
         this.currentPlanet = choice.get(nextNode);
     }
-
-
 }
