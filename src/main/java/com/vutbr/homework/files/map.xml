@@ -49,7 +49,7 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>none</type>
+        <type>FuelStation</type>
     </planet>
     <planet id="4">
         <name>Venus</name>
@@ -87,7 +87,7 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>none</type>
+        <type>RepairStation</type>
     </planet>
     <planet id="7">
         <name>7</name>

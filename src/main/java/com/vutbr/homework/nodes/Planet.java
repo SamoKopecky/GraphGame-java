@@ -9,6 +9,15 @@ public abstract class Planet {
     private String name;
     private int id;
     private Map<Planet, Path> neighbours;
+    private boolean visitedEvent = false;
+
+    public boolean isVisitedEvent() {
+        return visitedEvent;
+    }
+
+    public void setVisitedEvent(boolean visitedEvent) {
+        this.visitedEvent = visitedEvent;
+    }
 
     Planet(String name, int id) {
         this.neighbours = new HashMap<>();

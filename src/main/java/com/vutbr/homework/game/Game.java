@@ -10,13 +10,8 @@ public class Game {
     }
 
     private void gameCycle() {
-        while (true) {
-            map.callEventOfCurrentPlanet();
-            if (map.isGameFinished()) {
-                break;
-            }
-            map.printNeighbours();
-            map.getNextNode();
+        while (!map.isGameFinished()) {
+            map.chooseWhatToDo();
         }
     }
 

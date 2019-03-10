@@ -13,4 +13,28 @@ public class Player {
     public void incrementNumOfKeys() {
         numOfKeys++;
     }
+
+    public int getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(int fuel) {
+        this.fuel = fuel;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public int getHull() {
+        return hull;
+    }
+
+    public void setHull(int hull) {
+        this.hull = hull;
+    }
 }
