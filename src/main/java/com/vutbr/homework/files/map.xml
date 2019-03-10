@@ -221,7 +221,12 @@
     </planet>
     <planet id="18">
         <name>18</name>
-        <neighbours></neighbours>
+        <neighbours>
+            <neighbour>
+                <neighbourID>9</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
         <type>end</type>
     </planet>
 </planets>

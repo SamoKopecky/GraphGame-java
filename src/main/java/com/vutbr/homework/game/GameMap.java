@@ -15,7 +15,7 @@ import java.util.Scanner;
 class GameMap {
     private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
     private static final String XML_PATH = "./src/main/java/com/vutbr/homework/files/map.xml";
-    private Player player;
+    private Player player = new Player();
     private ArrayList<Planet> listOfPlanets = new ArrayList<>();
     private Planet currentPlanet;
     private boolean gameEnd = false;
@@ -57,7 +57,7 @@ class GameMap {
             }
         }
 
-        this.currentPlanet = listOfPlanets.get(0);
+        this.currentPlanet = listOfPlanets.get(13);
     }
 
     void printNeighbours() {
@@ -95,7 +95,7 @@ class GameMap {
         this.currentPlanet = choice.get(nextNode);
     }
 
-    public boolean isGameFinished() {
+    boolean isGameFinished() {
         return this.gameEnd;
     }
 }
