@@ -10,7 +10,7 @@ public abstract class Planet {
     private int id;
     private Map<Planet, Path> neighbours;
 
-    public Planet(String name, int id) {
+    Planet(String name, int id) {
         this.neighbours = new HashMap<>();
         this.name = name;
         this.id = id;
@@ -32,5 +32,5 @@ public abstract class Planet {
         this.neighbours.put(planet, path);
     }
 
-    public abstract void event(Player player);
+    public abstract boolean event(Player player);
 }

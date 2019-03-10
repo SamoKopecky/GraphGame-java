@@ -187,7 +187,7 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>none</type>
+        <type>firstKey</type>
     </planet>
     <planet id="15">
         <name>15</name>
@@ -217,7 +217,7 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>none</type>
+        <type>secondKey</type>
     </planet>
     <planet id="18">
         <name>18</name>

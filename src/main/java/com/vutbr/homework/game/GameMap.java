@@ -1,23 +1,31 @@
 package com.vutbr.homework.game;
 
-import com.vutbr.homework.nodes.EndPlanet;
-import com.vutbr.homework.nodes.OrdinaryPlanet;
-import com.vutbr.homework.nodes.Planet;
+import com.vutbr.homework.nodes.*;
 import com.vutbr.homework.parser.XMLParser;
 import com.vutbr.homework.paths.Path;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
-public class GameMap {
+
+class GameMap {
     private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
     private static final String XML_PATH = "./src/main/java/com/vutbr/homework/files/map.xml";
     private Player player;
     private ArrayList<Planet> listOfPlanets = new ArrayList<>();
     private Planet currentPlanet;
+    private boolean gameEnd = false;
 
-    public void generateMap() throws Exception {
+    void callEventOfCurrentPlanet() {
+        System.out.println("Nachadzas sa na planete : " + this.currentPlanet.getName());
+        this.gameEnd = this.currentPlanet.event(this.player);
+    }
+
+    void generateMap() throws Exception {
         NodeList nodeList;
         Element element;
 
@@ -25,10 +33,18 @@ public class GameMap {
         for (int i = 0; i < nodeList.getLength(); i++) {
             element = (Element) nodeList.item(i);
             String planetType = element.getElementsByTagName("type").item(0).getTextContent();
-            if (planetType.equals("none")) {
-                listOfPlanets.add(new OrdinaryPlanet(element.getElementsByTagName("name").item(0).getTextContent(), i));
-            } else if (planetType.equals("end")) {
-                listOfPlanets.add(new EndPlanet(element.getElementsByTagName("name").item(0).getTextContent(), i));
+            String planetName = element.getElementsByTagName("name").item(0).getTextContent();
+            switch (planetType) {
+                case "none":
+                    listOfPlanets.add(new OrdinaryPlanet(planetName, i));
+                    break;
+                case "end":
+                    listOfPlanets.add(new EndPlanet(planetName, i));
+                    break;
+                case "firstKey":
+                case "secondKey":
+                    listOfPlanets.add(new KeyPlanet(planetName, i));
+                    break;
             }
         }
 
@@ -44,9 +60,8 @@ public class GameMap {
         this.currentPlanet = listOfPlanets.get(0);
     }
 
-    public void printNeighbours() {
+    void printNeighbours() {
         int i = 0;
-        System.out.println("Nachadzas sa na planete : " + this.currentPlanet.getName());
         System.out.println("Mozes letiet na planety : ");
         for (Map.Entry<Planet, Path> entry : this.currentPlanet.getNeighbours().entrySet()) {
             System.out.println(ALPHABET[i] + ": Na planetu " + entry.getKey().getName() + "(" + entry.getKey().getId() +
@@ -55,7 +70,7 @@ public class GameMap {
         }
     }
 
-    public void getNextNode() {
+    void getNextNode() {
         Scanner sc = new Scanner(System.in);
         char nextNode;
         int i = 0;
@@ -78,5 +93,9 @@ public class GameMap {
         } while (!isCharInMap);
 
         this.currentPlanet = choice.get(nextNode);
+    }
+
+    public boolean isGameFinished() {
+        return this.gameEnd;
     }
 }
