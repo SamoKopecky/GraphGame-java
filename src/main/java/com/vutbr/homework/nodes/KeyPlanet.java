@@ -4,12 +4,14 @@ import com.vutbr.homework.game.Player;
 
 public class KeyPlanet extends Planet {
 
-    public KeyPlanet(String name, int id) {
-        super(name, id);
+    public KeyPlanet(String name, int id, String planetDesc) {
+        super(name, id, planetDesc);
     }
 
     @Override
     public boolean event(Player player) {
+        player.printStatus();
+        System.out.println(eventDesc);
         if (!this.isVisitedEvent()) {
             this.visitedEvent = true;
             System.out.println("Prisiel si na planetu z klucom a ziskal si kluc !");
@@ -20,8 +22,4 @@ public class KeyPlanet extends Planet {
         return false;
     }
 
-    @Override
-    public void printEventDesc() {
-        System.out.println("kluc");
-    }
 }

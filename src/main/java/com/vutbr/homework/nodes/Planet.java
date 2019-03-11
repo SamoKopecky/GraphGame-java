@@ -10,16 +10,23 @@ public abstract class Planet {
     private String name;
     private int id;
     private Map<Planet, Path> neighbours;
+    private String planetDesc;
+    String eventDesc = "todo";
     boolean visitedEvent = false;
 
-    Planet(String name, int id) {
+    Planet(String name, int id, String planetDesc) {
         this.neighbours = new HashMap<>();
         this.name = name;
         this.id = id;
+        this.planetDesc = planetDesc;
     }
 
     public boolean isVisitedEvent() {
         return visitedEvent;
+    }
+
+    public void setVisitedEvent(boolean visitedEvent) {
+        this.visitedEvent = visitedEvent;
     }
 
     public String getName() {
@@ -38,7 +45,9 @@ public abstract class Planet {
         this.neighbours.put(planet, path);
     }
 
-    public abstract boolean event(Player player);
+    public String getPlanetDesc() {
+        return planetDesc;
+    }
 
-    public abstract void printEventDesc();
+    public abstract boolean event(Player player);
 }

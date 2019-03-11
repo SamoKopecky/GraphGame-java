@@ -4,12 +4,14 @@ import com.vutbr.homework.game.Player;
 
 public class EndPlanet extends Planet {
 
-    public EndPlanet(String name, int id) {
-        super(name, id);
+    public EndPlanet(String name, int id, String planetDesc) {
+        super(name, id, planetDesc);
     }
 
     @Override
     public boolean event(Player player) {
+        player.printStatus();
+        System.out.println(eventDesc);
         if (player.getNumOfKeys() == 2) {
             System.out.println("Gratulujem dokoncil si hru !");
             return true;
@@ -17,10 +19,5 @@ public class EndPlanet extends Planet {
             System.out.println("Musis najprv pozbierat vsetky kluce aby si mohol prest portalom");
             return false;
         }
-    }
-
-    @Override
-    public void printEventDesc() {
-        System.out.println("koniec");
     }
 }

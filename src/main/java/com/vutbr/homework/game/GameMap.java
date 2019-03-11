@@ -9,9 +9,10 @@ import org.w3c.dom.NodeList;
 import java.io.IOException;
 import java.util.*;
 
-class GameMap {
+public class GameMap {
     private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
-    private static final String XML_PATH = "./map.xml";
+    private static final String MAP_FILE = "./map.xml";
+    private static final String EVENT_DESC_MAP = "./eventDescriptions.xml";
     private static final Scanner SC = new Scanner(System.in);
     private Player player = new Player();
     private List<Planet> listOfPlanets = new ArrayList<>();
@@ -19,36 +20,33 @@ class GameMap {
     private boolean gameEnd = false;
 
     void generateMap() throws Exception {
-        NodeList nodeList;
-        Element element;
+        NodeList mapList;
+        Element mapElement;
 
-        nodeList = XMLReader.XMLParse(XML_PATH, "//planet");
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            element = (Element) nodeList.item(i);
-            String planetType = element.getElementsByTagName("type").item(0).getTextContent();
-            String planetName = element.getElementsByTagName("name").item(0).getTextContent();
-            switch (planetType) {
-                case "none":
-                    listOfPlanets.add(new BasicPlanet(planetName, i));
-                    break;
-                case "end":
-                    listOfPlanets.add(new EndPlanet(planetName, i));
-                    break;
-                case "key":
-                    listOfPlanets.add(new KeyPlanet(planetName, i));
-                    break;
-                case "fuelStation":
-                    listOfPlanets.add(new FuelStationPlanet(planetName, i));
-                    break;
-                case "repairStation":
-                    listOfPlanets.add(new RepairStationPlanet(planetName, i));
-                    break;
+        mapList = XMLReader.XMLParse(MAP_FILE, "//planet");
+
+        for (int i = 0; i < mapList.getLength(); i++) {
+            mapElement = (Element) mapList.item(i);
+            String planetType = mapElement.getElementsByTagName("type").item(0).getTextContent();
+            String planetName = mapElement.getElementsByTagName("name").item(0).getTextContent();
+            String planetDesc = "temp";
+
+            if ("none".equals(planetType)) {
+                listOfPlanets.add(new BasicPlanet(planetName, i, planetDesc));
+            } else if ("end".equals(planetType)) {
+                listOfPlanets.add(new EndPlanet(planetName, i, planetDesc));
+            } else if ("key".equals(planetType)) {
+                listOfPlanets.add(new KeyPlanet(planetName, i, planetDesc));
+            } else if ("fuelStation".equals(planetType)) {
+                listOfPlanets.add(new FuelStationPlanet(planetName, i, planetDesc));
+            } else if ("repairStation".equals(planetType)) {
+                listOfPlanets.add(new RepairStationPlanet(planetName, i, planetDesc));
             }
         }
 
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            element = (Element) nodeList.item(i);
-            NodeList neighbours = element.getElementsByTagName("neighbourID");
+        for (int i = 0; i < mapList.getLength(); i++) {
+            mapElement = (Element) mapList.item(i);
+            NodeList neighbours = mapElement.getElementsByTagName("neighbourID");
             for (int j = 0; j < neighbours.getLength(); j++) {
                 int neighbourID = Integer.parseInt(neighbours.item(j).getTextContent());
                 listOfPlanets.get(i).setNeighbour(listOfPlanets.get(neighbourID), new Path());
@@ -56,6 +54,7 @@ class GameMap {
         }
 
         this.currentPlanet = listOfPlanets.get(0);
+        this.currentPlanet.setVisitedEvent(true);
     }
 
     void chooseWhatToDo() {
@@ -63,9 +62,11 @@ class GameMap {
         char toDoNext;
 
         clearConsole();
-        System.out.println("Nachádzaš sa na planéte : " + this.currentPlanet.getName() + "(" + this.currentPlanet.getId() + ")");
+        player.printStatus();
+        System.out.println("Nachádzaš sa na planéte : "
+                + this.currentPlanet.getName() + "(" + this.currentPlanet.getId() + ")");
         if (!eventVisited) {
-            this.currentPlanet.printEventDesc();
+            System.out.println(this.currentPlanet.getPlanetDesc());
         }
         System.out.println("Čo spravíš ďalej ?\nA: odleť na daľšiu planétu");
         if (!eventVisited) {
@@ -100,6 +101,7 @@ class GameMap {
         Map<Character, Planet> choice = new HashMap<>();
 
         clearConsole();
+        player.printStatus();
         System.out.println("Mozes letiet na :");
         for (Map.Entry<Planet, Path> entry : this.currentPlanet.getNeighbours().entrySet()) {
             choice.put(ALPHABET[i], entry.getKey());
@@ -122,7 +124,7 @@ class GameMap {
         return this.gameEnd;
     }
 
-    private static void clearConsole() {
+    public static void clearConsole() {
         String currentOs = System.getProperty("os.name").toLowerCase();
         if (currentOs.equals("linux")) {
             System.out.print("\033[H\033[2J");
