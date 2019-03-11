@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<planets>
+    <planet id="0">
+        <name>Earth</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>1</neighbourID>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>2</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="1">
+        <name>Mars</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>3</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="2">
+        <name>Saturn</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>4</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="3">
+        <name>Uranus</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>6</neighbourID>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>5</neighbourID>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>7</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>fuelStation</type>
+    </planet>
+    <planet id="4">
+        <name>Venus</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>6</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="5">
+        <name>Pluto</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>8</neighbourID>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>3</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="6">
+        <name>6</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>3</neighbourID>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>12</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>repairStation</type>
+    </planet>
+    <planet id="7">
+        <name>7</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>5</neighbourID>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>2</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="8">
+        <name>8</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>9</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="9">
+        <name>9</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>18</neighbourID>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>10</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="10">
+        <name>10</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>11</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="11">
+        <name>11</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>17</neighbourID>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>7</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="12">
+        <name>12</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>13</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="13">
+        <name>13</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>4</neighbourID>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>14</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="14">
+        <name>14</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>15</neighbourID>
+                <path>200</path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>8</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>key</type>
+    </planet>
+    <planet id="15">
+        <name>15</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>16</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="16">
+        <name>16</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>17</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>none</type>
+    </planet>
+    <planet id="17">
+        <name>17</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>11</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>key</type>
+    </planet>
+    <planet id="18">
+        <name>18</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>9</neighbourID>
+                <path>200</path>
+            </neighbour>
+        </neighbours>
+        <type>end</type>
+    </planet>
+</planets>

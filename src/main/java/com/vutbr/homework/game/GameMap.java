@@ -58,31 +58,33 @@ public class GameMap {
     }
 
     void chooseWhatToDo() {
-        boolean eventVisited = this.currentPlanet.isVisitedEvent();
+        List<Character> options = new ArrayList<>();
         char toDoNext;
+        String toPrint;
+        boolean choseRight;
+        options.add('A');
 
         clearConsole();
         player.printStatus();
-        System.out.println("Nachádzaš sa na planéte : "
-                + this.currentPlanet.getName() + "(" + this.currentPlanet.getId() + ")");
-        if (!eventVisited) {
-            System.out.println(this.currentPlanet.getPlanetDesc());
-        }
-        System.out.println("Čo spravíš ďalej ?\nA: odleť na daľšiu planétu");
-        if (!eventVisited) {
-            System.out.println("B: pristáň na planétu");
-            toDoNext = Character.toUpperCase(SC.next().charAt(0));
-            while (toDoNext != 'A' && toDoNext != 'B') {
-                System.out.println("Zvoľ si písmeno z listu na obrazovke");
-                toDoNext = Character.toUpperCase(SC.next().charAt(0));
-            }
+        toPrint = "Nachádzaš sa na planéte : " + this.currentPlanet.getName() + "(" + this.currentPlanet.getId() + ")";
+
+        if (!currentPlanet.isVisitedEvent()) {
+            options.add('B');
+            toPrint = toPrint.concat("\n" + currentPlanet.getPlanetDesc() + "\n"
+                    + "Čo spravíš ďalej ?\nA: odleť na daľšiu planétu" + "\nB: pristáň na planétu");
         } else {
-            toDoNext = Character.toUpperCase(SC.next().charAt(0));
-            while (toDoNext != 'A') {
-                System.out.println("Zvoľ si písmeno z listu na obrazovke");
-                toDoNext = Character.toUpperCase(SC.next().charAt(0));
-            }
+            toPrint = toPrint.concat("\nČo spravíš ďalej ?\nA: odleť na daľšiu planétu");
         }
+        toPrint = toPrint.concat("\nTvoje volba je :");
+        System.out.println(toPrint);
+        do {
+            toDoNext = Character.toUpperCase(SC.next().charAt(0));
+            choseRight = options.contains(toDoNext);
+            if (!choseRight) {
+                System.out.println("Zvol si pismeno z listu planet na obrazovke !");
+            }
+        } while (!choseRight);
+
 
         if (toDoNext == 'A') {
             this.getNextNode();
@@ -98,6 +100,7 @@ public class GameMap {
     private void getNextNode() {
         char nextNode;
         int i = 0;
+        boolean choseRight;
         Map<Character, Planet> choice = new HashMap<>();
 
         clearConsole();
@@ -110,11 +113,13 @@ public class GameMap {
             i++;
         }
         System.out.println("X: nechcem este odist z tejto planety\nTvoje volba je :");
-        nextNode = Character.toUpperCase(SC.next().charAt(0));
-        while (!choice.keySet().contains(nextNode) && nextNode != 'X') {
-            System.out.println("Zvol si pismeno z listu planet na obrazovke !");
+        do {
             nextNode = Character.toUpperCase(SC.next().charAt(0));
-        }
+            choseRight = choice.keySet().contains(nextNode) || nextNode == 'X';
+            if (!choseRight) {
+                System.out.println("Zvol si pismeno z listu planet na obrazovke !");
+            }
+        } while (!choseRight);
         if (nextNode != 'X') {
             this.currentPlanet = choice.get(nextNode);
         }
@@ -124,7 +129,7 @@ public class GameMap {
         return this.gameEnd;
     }
 
-    public static void clearConsole() {
+    private void clearConsole() {
         String currentOs = System.getProperty("os.name").toLowerCase();
         if (currentOs.equals("linux")) {
             System.out.print("\033[H\033[2J");
