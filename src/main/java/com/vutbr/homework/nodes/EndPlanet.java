@@ -4,8 +4,8 @@ import com.vutbr.homework.game.Player;
 
 public class EndPlanet extends Planet {
 
-    public EndPlanet(String name, int id, String planetDesc) {
-        super(name, id, planetDesc);
+    public EndPlanet(String name, int id, String planetDesc, String eventDesc) {
+        super(name, id, planetDesc, eventDesc);
     }
 
     @Override

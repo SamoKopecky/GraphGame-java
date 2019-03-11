@@ -8,8 +8,8 @@ public class RepairStationPlanet extends Planet {
     private static final double HULL_CONVERSION_RATIO = 20;
     private static final double ORE_CONVERSION_RATIO = 5.94;
 
-    public RepairStationPlanet(String name, int id, String planetDesc) {
-        super(name, id, planetDesc);
+    public RepairStationPlanet(String name, int id, String planetDesc, String eventDesc) {
+        super(name, id, planetDesc, eventDesc);
     }
 
     @Override

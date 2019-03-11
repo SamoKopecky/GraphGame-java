@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class FuelStationPlanet extends Planet {
     private static final double CONVERSION_RATIO = 2.58;
 
-    public FuelStationPlanet(String name, int id, String planetDesc) {
-        super(name, id, planetDesc);
+    public FuelStationPlanet(String name, int id, String planetDesc, String eventDesc) {
+        super(name, id, planetDesc, eventDesc);
     }
 
     @Override

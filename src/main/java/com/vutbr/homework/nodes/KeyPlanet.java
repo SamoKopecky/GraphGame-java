@@ -4,8 +4,8 @@ import com.vutbr.homework.game.Player;
 
 public class KeyPlanet extends Planet {
 
-    public KeyPlanet(String name, int id, String planetDesc) {
-        super(name, id, planetDesc);
+    public KeyPlanet(String name, int id, String planetDesc, String eventDesc) {
+        super(name, id, planetDesc, eventDesc);
     }
 
     @Override

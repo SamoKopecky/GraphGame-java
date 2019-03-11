@@ -11,10 +11,11 @@ public abstract class Planet {
     private int id;
     private Map<Planet, Path> neighbours;
     private String planetDesc;
-    String eventDesc = "todo";
+    String eventDesc;
     boolean visitedEvent = false;
 
-    Planet(String name, int id, String planetDesc) {
+    Planet(String name, int id, String planetDesc, String eventDesc) {
+        this.eventDesc = eventDesc;
         this.neighbours = new HashMap<>();
         this.name = name;
         this.id = id;

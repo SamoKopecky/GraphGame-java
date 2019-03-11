@@ -78,6 +78,7 @@ public class Player {
     }
 
     public void printStatus() {
-        System.out.format("palivo : %.0f jednotiek\nkredity : %.2f kreditov\nsila trupu : %.0f%%\npocet klucov : %d/2\n", fuel, money, hull, numOfKeys);
+        System.out.format("palivo : %.0f jednotiek\nkredity : %.2f kreditov\nsila trupu : %.0f%%\npocet klucov : %d/2\n",
+                fuel, money, hull, numOfKeys);
     }
 }

@@ -13,6 +13,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="1">
         <name>Mars</name>
@@ -23,6 +25,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="2">
         <name>Saturn</name>
@@ -33,6 +37,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="3">
         <name>Uranus</name>
@@ -51,6 +57,8 @@
             </neighbour>
         </neighbours>
         <type>fuelStation</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="4">
         <name>Venus</name>
@@ -61,6 +69,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="5">
         <name>Pluto</name>
@@ -75,6 +85,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="6">
         <name>6</name>
@@ -89,6 +101,8 @@
             </neighbour>
         </neighbours>
         <type>repairStation</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="7">
         <name>7</name>
@@ -103,6 +117,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="8">
         <name>8</name>
@@ -113,6 +129,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="9">
         <name>9</name>
@@ -127,6 +145,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="10">
         <name>10</name>
@@ -137,6 +157,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="11">
         <name>11</name>
@@ -151,6 +173,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="12">
         <name>12</name>
@@ -161,6 +185,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="13">
         <name>13</name>
@@ -175,6 +201,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="14">
         <name>14</name>
@@ -189,6 +217,8 @@
             </neighbour>
         </neighbours>
         <type>key</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="15">
         <name>15</name>
@@ -199,6 +229,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="16">
         <name>16</name>
@@ -209,6 +241,8 @@
             </neighbour>
         </neighbours>
         <type>none</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="17">
         <name>17</name>
@@ -219,6 +253,8 @@
             </neighbour>
         </neighbours>
         <type>key</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
     <planet id="18">
         <name>18</name>
@@ -229,5 +265,7 @@
             </neighbour>
         </neighbours>
         <type>end</type>
+        <planetDescription>popis planety</planetDescription>
+        <eventDescription>popis eventu</eventDescription>
     </planet>
 </planets>

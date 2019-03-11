@@ -29,18 +29,19 @@ public class GameMap {
             mapElement = (Element) mapList.item(i);
             String planetType = mapElement.getElementsByTagName("type").item(0).getTextContent();
             String planetName = mapElement.getElementsByTagName("name").item(0).getTextContent();
-            String planetDesc = "temp";
+            String planetDesc = mapElement.getElementsByTagName("planetDescription").item(0).getTextContent();
+            String eventDesc = mapElement.getElementsByTagName("eventDescription").item(0).getTextContent();
 
             if ("none".equals(planetType)) {
-                listOfPlanets.add(new BasicPlanet(planetName, i, planetDesc));
+                listOfPlanets.add(new BasicPlanet(planetName, i, planetDesc, eventDesc));
             } else if ("end".equals(planetType)) {
-                listOfPlanets.add(new EndPlanet(planetName, i, planetDesc));
+                listOfPlanets.add(new EndPlanet(planetName, i, planetDesc, eventDesc));
             } else if ("key".equals(planetType)) {
-                listOfPlanets.add(new KeyPlanet(planetName, i, planetDesc));
+                listOfPlanets.add(new KeyPlanet(planetName, i, planetDesc, eventDesc));
             } else if ("fuelStation".equals(planetType)) {
-                listOfPlanets.add(new FuelStationPlanet(planetName, i, planetDesc));
+                listOfPlanets.add(new FuelStationPlanet(planetName, i, planetDesc, eventDesc));
             } else if ("repairStation".equals(planetType)) {
-                listOfPlanets.add(new RepairStationPlanet(planetName, i, planetDesc));
+                listOfPlanets.add(new RepairStationPlanet(planetName, i, planetDesc, eventDesc));
             }
         }
 
