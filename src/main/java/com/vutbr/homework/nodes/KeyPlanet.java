@@ -11,12 +11,17 @@ public class KeyPlanet extends Planet {
     @Override
     public boolean event(Player player) {
         if (!this.isVisitedEvent()) {
-            this.setVisitedEvent(true);
+            this.visitedEvent = true;
             System.out.println("Prisiel si na planetu z klucom a ziskal si kluc !");
             player.incrementNumOfKeys();
         } else {
             System.out.println("Kluc na tejto planete si uz zobral");
         }
         return false;
+    }
+
+    @Override
+    public void printEventDesc() {
+        System.out.println("kluc");
     }
 }

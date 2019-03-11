@@ -18,4 +18,9 @@ public class EndPlanet extends Planet {
             return false;
         }
     }
+
+    @Override
+    public void printEventDesc() {
+        System.out.println("koniec");
+    }
 }

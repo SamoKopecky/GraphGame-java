@@ -12,4 +12,9 @@ public class RepairStationPlanet extends Planet {
         System.out.println("repair");
         return false;
     }
+
+    @Override
+    public void printEventDesc() {
+        System.out.println("repair planet");
+    }
 }

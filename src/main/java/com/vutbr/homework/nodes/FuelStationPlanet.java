@@ -12,4 +12,9 @@ public class FuelStationPlanet extends Planet {
         System.out.println("fuel");
         return false;
     }
+
+    @Override
+    public void printEventDesc() {
+        System.out.println("fuel");
+    }
 }

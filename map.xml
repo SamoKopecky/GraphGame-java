@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <planets>
     <planet id="0">
         <name>Earth</name>
@@ -49,7 +50,7 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>FuelStation</type>
+        <type>fuelStation</type>
     </planet>
     <planet id="4">
         <name>Venus</name>
@@ -87,7 +88,7 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>RepairStation</type>
+        <type>repairStation</type>
     </planet>
     <planet id="7">
         <name>7</name>
@@ -187,7 +188,7 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>firstKey</type>
+        <type>key</type>
     </planet>
     <planet id="15">
         <name>15</name>
@@ -217,7 +218,7 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>secondKey</type>
+        <type>key</type>
     </planet>
     <planet id="18">
         <name>18</name>

@@ -2,6 +2,7 @@ package com.vutbr.homework.nodes;
 
 import com.vutbr.homework.game.Player;
 import com.vutbr.homework.paths.Path;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,20 +10,16 @@ public abstract class Planet {
     private String name;
     private int id;
     private Map<Planet, Path> neighbours;
-    private boolean visitedEvent = false;
-
-    public boolean isVisitedEvent() {
-        return visitedEvent;
-    }
-
-    public void setVisitedEvent(boolean visitedEvent) {
-        this.visitedEvent = visitedEvent;
-    }
+    boolean visitedEvent = false;
 
     Planet(String name, int id) {
         this.neighbours = new HashMap<>();
         this.name = name;
         this.id = id;
+    }
+
+    public boolean isVisitedEvent() {
+        return visitedEvent;
     }
 
     public String getName() {
@@ -42,4 +39,6 @@ public abstract class Planet {
     }
 
     public abstract boolean event(Player player);
+
+    public abstract void printEventDesc();
 }

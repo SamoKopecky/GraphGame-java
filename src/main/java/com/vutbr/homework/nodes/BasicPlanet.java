@@ -10,7 +10,12 @@ public class BasicPlanet extends Planet {
     @Override
     public boolean event(Player player) {
         System.out.println("obycajna planeta");
-        this.setVisitedEvent(true);
+        this.visitedEvent = true;
         return false;
+    }
+
+    @Override
+    public void printEventDesc() {
+        System.out.println("ordinary planet");
     }
 }
