@@ -9,10 +9,9 @@ import org.w3c.dom.NodeList;
 import java.io.IOException;
 import java.util.*;
 
-public class GameMap {
+class GameMap {
     private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
     private static final String MAP_FILE = "./map.xml";
-    private static final String EVENT_DESC_MAP = "./eventDescriptions.xml";
     private static final Scanner SC = new Scanner(System.in);
     private Player player = new Player();
     private List<Planet> listOfPlanets = new ArrayList<>();
@@ -32,9 +31,7 @@ public class GameMap {
             String planetDesc = mapElement.getElementsByTagName("planetDescription").item(0).getTextContent();
             String eventDesc = mapElement.getElementsByTagName("eventDescription").item(0).getTextContent();
 
-            if ("none".equals(planetType)) {
-                listOfPlanets.add(new BasicPlanet(planetName, i, planetDesc, eventDesc));
-            } else if ("end".equals(planetType)) {
+            if ("end".equals(planetType)) {
                 listOfPlanets.add(new EndPlanet(planetName, i, planetDesc, eventDesc));
             } else if ("key".equals(planetType)) {
                 listOfPlanets.add(new KeyPlanet(planetName, i, planetDesc, eventDesc));
@@ -42,6 +39,8 @@ public class GameMap {
                 listOfPlanets.add(new FuelStationPlanet(planetName, i, planetDesc, eventDesc));
             } else if ("repairStation".equals(planetType)) {
                 listOfPlanets.add(new RepairStationPlanet(planetName, i, planetDesc, eventDesc));
+            } else {
+                listOfPlanets.add(new BasicPlanet(planetName, i, planetDesc, eventDesc, PlanetTypes.valueOf(planetType.toUpperCase())));
             }
         }
 

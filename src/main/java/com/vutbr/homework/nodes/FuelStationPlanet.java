@@ -5,6 +5,7 @@ import com.vutbr.homework.game.Player;
 import java.util.Scanner;
 
 public class FuelStationPlanet extends Planet {
+
     private static final double CONVERSION_RATIO = 2.58;
 
     public FuelStationPlanet(String name, int id, String planetDesc, String eventDesc) {
@@ -28,7 +29,7 @@ public class FuelStationPlanet extends Planet {
             canBuyFuel = player.canBuyFuel(numberOfUnitsToBuy, prize);
             switch (canBuyFuel) {
                 case 1:
-                    System.out.format("Nemozes mat viac paliva ako %.0f!\n", + Player.MAX_FUEL());
+                    System.out.format("Nemozes mat viac paliva ako %.0f!\n", +Player.MAX_FUEL());
                     break;
                 case 2:
                     System.out.print("Nemas dost penazi !\n");

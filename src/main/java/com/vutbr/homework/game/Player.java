@@ -53,6 +53,14 @@ public class Player {
         this.oreStorage = oreStorage;
     }
 
+    public void appendOreStorage(double oreStorageToAppend) {
+        this.oreStorage += oreStorageToAppend;
+    }
+
+    public void deductHull(double hullToDeduct) {
+        this.hull -= hullToDeduct;
+    }
+
     public void incrementNumOfKeys() {
         this.numOfKeys++;
     }
@@ -78,7 +86,8 @@ public class Player {
     }
 
     public void printStatus() {
-        System.out.format("palivo : %.0f jednotiek\nkredity : %.2f kreditov\nsila trupu : %.0f%%\npocet klucov : %d/2\n",
-                fuel, money, hull, numOfKeys);
+        System.out.format("palivo : %.0f jednotiek\nton mineralov : %.0f\nkredity : %.2f kreditov\nsila trupu : %.0f%%\n" +
+                        "pocet klucov : %d/2\n",
+                fuel, oreStorage, money, hull, numOfKeys);
     }
 }

@@ -1,7 +1,6 @@
 package com.vutbr.homework.game;
 
 public class Game {
-
     private GameMap map = new GameMap();
 
     private void startGame() throws Exception {
