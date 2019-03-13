@@ -23,9 +23,9 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>deadly</type>
-        <planetDescription>deadly planet</planetDescription>
-        <eventDescription>deadly event</eventDescription>
+        <type>friendly</type>
+        <planetDescription>friendly planet</planetDescription>
+        <eventDescription>friendly event</eventDescription>
     </planet>
     <planet id="2">
         <name>Saturn</name>
@@ -35,9 +35,9 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>hostile</type>
-        <planetDescription>hostile planet</planetDescription>
-        <eventDescription>hostile event</eventDescription>
+        <type>neutral</type>
+        <planetDescription>neutral planet</planetDescription>
+        <eventDescription>neutral event</eventDescription>
     </planet>
     <planet id="3">
         <name>Uranus</name>
@@ -115,9 +115,9 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>friendly</type>
-        <planetDescription>friendly planet</planetDescription>
-        <eventDescription>friendly event</eventDescription>
+        <type>deadly</type>
+        <planetDescription>deadly planet</planetDescription>
+        <eventDescription>deadly event</eventDescription>
     </planet>
     <planet id="8">
         <name>8</name>
@@ -143,9 +143,9 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>deadly</type>
-        <planetDescription>deadly planet</planetDescription>
-        <eventDescription>deadly event</eventDescription>
+        <type>hostile</type>
+        <planetDescription>hostile planet</planetDescription>
+        <eventDescription>hostile event</eventDescription>
     </planet>
     <planet id="10">
         <name>10</name>
@@ -155,9 +155,9 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>neutral</type>
-        <planetDescription>neutral planet</planetDescription>
-        <eventDescription>neutral event</eventDescription>
+        <type>friendly</type>
+        <planetDescription>friendly planet</planetDescription>
+        <eventDescription>friendly event</eventDescription>
     </planet>
     <planet id="11">
         <name>11</name>
@@ -171,9 +171,9 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>hostile</type>
-        <planetDescription>hostile planet</planetDescription>
-        <eventDescription>hostile event</eventDescription>
+        <type>friendly</type>
+        <planetDescription>friendly planet</planetDescription>
+        <eventDescription>friendly event</eventDescription>
     </planet>
     <planet id="12">
         <name>12</name>
@@ -183,9 +183,9 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>hostile</type>
-        <planetDescription>hostile planet</planetDescription>
-        <eventDescription>hostile event</eventDescription>
+        <type>deadly</type>
+        <planetDescription>deadly planet</planetDescription>
+        <eventDescription>deadly event</eventDescription>
     </planet>
     <planet id="13">
         <name>13</name>
@@ -227,9 +227,9 @@
                 <path>200</path>
             </neighbour>
         </neighbours>
-        <type>friendly</type>
-        <planetDescription>friendly planet</planetDescription>
-        <eventDescription>friendly event</eventDescription>
+        <type>deadly</type>
+        <planetDescription>deadly planet</planetDescription>
+        <eventDescription>deadly event</eventDescription>
     </planet>
     <planet id="16">
         <name>16</name>

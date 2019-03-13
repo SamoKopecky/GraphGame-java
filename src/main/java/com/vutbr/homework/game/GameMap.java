@@ -53,8 +53,8 @@ class GameMap {
             }
         }
 
-        this.currentPlanet = listOfPlanets.get(0);
-        this.currentPlanet.setVisitedEvent(true);
+        currentPlanet = listOfPlanets.get(0);
+        currentPlanet.setVisitedEvent(true);
     }
 
     void chooseWhatToDo() {
@@ -66,7 +66,7 @@ class GameMap {
 
         clearConsole();
         player.printStatus();
-        toPrint = "Nachádzaš sa na planéte : " + this.currentPlanet.getName() + "(" + this.currentPlanet.getId() + ")";
+        toPrint = "Nachádzaš sa na planéte : " + currentPlanet.getName() + "(" + currentPlanet.getId() + ")";
 
         if (!currentPlanet.isVisitedEvent()) {
             options.add('B');
@@ -90,7 +90,14 @@ class GameMap {
             this.getNextNode();
         } else {
             clearConsole();
-            this.gameEnd = this.currentPlanet.event(this.player);
+            gameEnd = currentPlanet.event(player);
+            if (gameEnd = player.getFuel() <= 0) {
+                System.out.println("prehral si lebo ti doslo palivo");
+                return;
+            } else if (gameEnd = player.getHull() <= 0) {
+                System.out.println("prehral si lebo sa ti znicila lod");
+                return;
+            }
             System.out.println("Stlač enter aby si pokračoval");
             SC.nextLine();
             SC.nextLine();
@@ -106,7 +113,7 @@ class GameMap {
         clearConsole();
         player.printStatus();
         System.out.println("Mozes letiet na :");
-        for (Map.Entry<Planet, Path> entry : this.currentPlanet.getNeighbours().entrySet()) {
+        for (Map.Entry<Planet, Path> entry : currentPlanet.getNeighbours().entrySet()) {
             choice.put(ALPHABET[i], entry.getKey());
             System.out.println(ALPHABET[i] + ": Na planetu " + entry.getKey().getName() + "(" + entry.getKey().getId() +
                     ") ktora je vzdialena " + entry.getValue().getLength() + " jednotiek.");
@@ -121,12 +128,8 @@ class GameMap {
             }
         } while (!choseRight);
         if (nextNode != 'X') {
-            this.currentPlanet = choice.get(nextNode);
+            currentPlanet = choice.get(nextNode);
         }
-    }
-
-    boolean isGameFinished() {
-        return this.gameEnd;
     }
 
     private void clearConsole() {
@@ -143,5 +146,9 @@ class GameMap {
         } else {
             System.out.println("unknown OS");
         }
+    }
+
+    boolean isGameFinished() {
+        return gameEnd;
     }
 }

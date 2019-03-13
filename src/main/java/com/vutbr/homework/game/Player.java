@@ -1,13 +1,13 @@
 package com.vutbr.homework.game;
 
 public class Player {
-    private double oreStorage = 10;
-    private double fuel = 2;
+    private int oreStorage = 10;
+    private int fuel = 2;
     private double money = 300;
-    private double hull = 100;
+    private int hull = 5;
     private int numOfKeys = 0;
-    private static final double MAX_FUEL = 5000;
-    private static final double MAX_HULL = 100;
+    private static final int MAX_FUEL = 5000;
+    private static final int MAX_HULL = 100;
 
     public static double MAX_FUEL() {
         return MAX_FUEL;
@@ -17,11 +17,11 @@ public class Player {
         return MAX_HULL;
     }
 
-    public double getFuel() {
+    public int getFuel() {
         return fuel;
     }
 
-    public void setFuel(double fuel) {
+    public void setFuel(int fuel) {
         this.fuel = fuel;
     }
 
@@ -33,11 +33,11 @@ public class Player {
         this.money = money;
     }
 
-    public double getHull() {
+    public int getHull() {
         return hull;
     }
 
-    public void setHull(double hull) {
+    public void setHull(int hull) {
         this.hull = hull;
     }
 
@@ -45,19 +45,19 @@ public class Player {
         return numOfKeys;
     }
 
-    public double getOreStorage() {
+    public int getOreStorage() {
         return oreStorage;
     }
 
-    public void setOreStorage(double oreStorage) {
+    public void setOreStorage(int oreStorage) {
         this.oreStorage = oreStorage;
     }
 
-    public void appendOreStorage(double oreStorageToAppend) {
+    public void appendOreStorage(int oreStorageToAppend) {
         this.oreStorage += oreStorageToAppend;
     }
 
-    public void deductHull(double hullToDeduct) {
+    public void deductHull(int hullToDeduct) {
         this.hull -= hullToDeduct;
     }
 
@@ -85,9 +85,12 @@ public class Player {
         }
     }
 
+    boolean isHullBroken() {
+        return hull <= 0;
+    }
+
     public void printStatus() {
-        System.out.format("palivo : %.0f jednotiek\nton mineralov : %.0f\nkredity : %.2f kreditov\nsila trupu : %.0f%%\n" +
-                        "pocet klucov : %d/2\n",
-                fuel, oreStorage, money, hull, numOfKeys);
+        System.out.format("palivo : %d jednotiek\nton mineralov : %d\nkredity : %.2f kreditov\nsila trupu : %d%%"
+                        + "\n" + "pocet klucov : %d/2\n", fuel, oreStorage, money, hull, numOfKeys);
     }
 }
