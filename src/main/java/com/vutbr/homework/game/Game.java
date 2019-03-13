@@ -1,17 +1,17 @@
 package com.vutbr.homework.game;
 
 public class Game {
-    private Graph grap;
+    private Graph graph;
 
     private void startGame() throws Exception {
         RandomizeItems.randomizeItems();
-        grap = new Graph();
-        grap.generateMap();
+        graph = new Graph();
+        graph.generateMap();
     }
 
     private void gameCycle() {
-        while (!grap.isGameFinished()) {
-            grap.nextChoice();
+        while (!graph.isGameFinished() && !graph.getPlayer().isPlayerDead()) {
+            graph.nextChoice();
         }
     }
 

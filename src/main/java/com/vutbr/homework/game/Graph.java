@@ -17,12 +17,12 @@ class Graph {
     private Player player;
     private List<Planet> listOfNodes;
     private Planet currentNode;
-    private boolean gameEnd;
+    private boolean gameFinished;
 
-    Graph() {
+    Graph () {
         player = new Player();
         listOfNodes = new ArrayList<>();
-        gameEnd = false;
+        gameFinished = false;
     }
 
     void generateMap() throws Exception {
@@ -49,8 +49,7 @@ class Graph {
             } else if (planetType.isEmpty()) {
                 listOfNodes.add(new BasicPlanet(planetName, i, planetDesc, eventDesc, PlanetType.NONE));
             } else {
-                listOfNodes.add(new BasicPlanet(planetName, i, planetDesc, eventDesc,
-                        PlanetType.valueOf(planetType.toUpperCase())));
+                listOfNodes.add(new BasicPlanet(planetName, i, planetDesc, eventDesc, PlanetType.valueOf(planetType.toUpperCase())));
             }
         }
 
@@ -68,7 +67,7 @@ class Graph {
             }
         }
 
-        currentNode = listOfNodes.get(0);
+        currentNode = listOfNodes.get(9);
         currentNode.setVisitedEvent(true);
     }
 
@@ -105,8 +104,7 @@ class Graph {
             waitForUser();
         } else {
             clearConsole();
-            gameEnd = currentNode.event(player);
-            if (checkIfPlayerDead()) return;
+            gameFinished = currentNode.event(player);
             waitForUser();
         }
     }
@@ -115,17 +113,6 @@ class Graph {
         System.out.println("Stlač enter aby si pokračoval");
         SC.nextLine();
         SC.nextLine();
-    }
-
-    private boolean checkIfPlayerDead() {
-        if (gameEnd = player.getFuel() <= 0) {
-            System.out.println("prehral si lebo ti doslo palivo");
-            return true;
-        } else if (gameEnd = player.getHull() <= 0) {
-            System.out.println("prehral si lebo sa ti znicila lod");
-            return true;
-        }
-        return false;
     }
 
     private void getNextNode() {
@@ -179,7 +166,11 @@ class Graph {
         }
     }
 
+    Player getPlayer() {
+        return player;
+    }
+
     boolean isGameFinished() {
-        return gameEnd;
+        return gameFinished;
     }
 }

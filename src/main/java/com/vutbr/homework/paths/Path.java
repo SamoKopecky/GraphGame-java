@@ -34,7 +34,7 @@ public class Path {
             visitedPath = true;
         } else {
             player.printStatus();
-            System.out.println("cesta ta stala " + length + " ale nic si nenasiel");
+            System.out.println("cesta ta stala " + length + " paliva ale nic si nenasiel");
         }
     }
 }

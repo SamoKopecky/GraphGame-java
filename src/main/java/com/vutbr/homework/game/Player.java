@@ -89,4 +89,16 @@ public class Player {
         System.out.format("palivo : %d jednotiek\nton mineralov : %d\nkredity : %.2f kreditov\nsila trupu : %d%%"
                 + "\n" + "pocet klucov : %d/2\n\n", fuel, mineralsStorage, money, hull, numOfKeys);
     }
+
+    boolean isPlayerDead() {
+        if (hull <= 0) {
+            System.out.println("pokazila sa ti lod, prehral si");
+            return true;
+        } else if (fuel <= 0) {
+            System.out.println("doslo ti palivo, prehral si");
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
