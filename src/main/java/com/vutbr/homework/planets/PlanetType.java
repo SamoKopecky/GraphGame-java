@@ -4,9 +4,9 @@ public enum PlanetType {
 
     FRIENDLY(85, 0),
     HOSTILE(170, 20),
-    NEUTRAL(43,10),
-    DEADLY(43,30),
-    NONE(0,0);
+    NEUTRAL(43, 10),
+    DEADLY(43, 30),
+    NONE(0, 0);
 
     private int minerals, hull;
 

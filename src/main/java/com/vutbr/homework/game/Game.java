@@ -11,7 +11,7 @@ public class Game {
 
     private void gameCycle() {
         while (!grap.isGameFinished()) {
-            grap.chooseWhatToDo();
+            grap.nextChoice();
         }
     }
 

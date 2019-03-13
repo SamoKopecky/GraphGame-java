@@ -16,8 +16,10 @@ class RandomizeItems {
         Document document = XMLManipulations.readFromXML("./resources/blank_map.xml");
 
         NodeList map = XMLManipulations.getNodeListFromDoc(document, "//planet");
-        NodeList planetInfo = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML("./resources/planets_info.xml"), "//planetType");
-        NodeList pathInfo = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML("./resources/planets_info.xml"), "//pathType");
+        NodeList planetInfo = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML("./resources" +
+                "/planets_info.xml"), "//planetType");
+        NodeList pathInfo = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML("./resources" +
+                "/planets_info.xml"), "//pathType");
 
         for (int i = 0; i < map.getLength(); i++) {
             element = (Element) map.item(i);
@@ -31,8 +33,10 @@ class RandomizeItems {
                 Element planetInfoElement = (Element) planetInfo.item(randomNumber);
 
                 String newPlanetType = planetInfoElement.getElementsByTagName("name").item(0).getTextContent();
-                String newPlanetDesc = planetInfoElement.getElementsByTagName("planetDescription").item(0).getTextContent();
-                String newEventDesc = planetInfoElement.getElementsByTagName("eventDescription").item(0).getTextContent();
+                String newPlanetDesc =
+                        planetInfoElement.getElementsByTagName("planetDescription").item(0).getTextContent();
+                String newEventDesc =
+                        planetInfoElement.getElementsByTagName("eventDescription").item(0).getTextContent();
 
                 planetType.setTextContent(newPlanetType);
                 planetDesc.setTextContent(newPlanetDesc);

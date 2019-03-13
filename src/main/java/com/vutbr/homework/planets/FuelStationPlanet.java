@@ -21,7 +21,8 @@ public class FuelStationPlanet extends Planet {
 
         player.printStatus();
         System.out.println(eventDesc);
-        System.out.println("Jedna jednotka paliva stoji " + CONVERSION_RATIO + " kreditov\nKolko jednotiek chces kupit ?");
+        System.out.println("Jedna jednotka paliva stoji " + CONVERSION_RATIO + " kreditov\nKolko jednotiek chces " +
+                "kupit ?");
 
         do {
             numberOfUnitsToBuy = sc.nextInt();

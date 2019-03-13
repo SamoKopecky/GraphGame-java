@@ -22,13 +22,15 @@ public class RepairStationPlanet extends Planet {
 
         System.out.println(eventDesc);
         if (moneyGained > 0) {
-            System.out.format("Predal si " + player.getMineralsStorage() + " kg surovin a ziskal si %.2f kreditov\n", moneyGained);
+            System.out.format("Predal si " + player.getMineralsStorage() + " kg surovin a ziskal si %.2f kreditov\n",
+                    moneyGained);
             player.setMoney(player.getMoney() + moneyGained);
             player.setMineralsStorage(0);
         }
         player.printStatus();
 
-        System.out.println("Jedno percento trupu stoji " + HULL_CONVERSION_RATIO + " kreditov\nKolko percent chces opravit ?");
+        System.out.println("Jedno percento trupu stoji " + HULL_CONVERSION_RATIO + " kreditov\nKolko percent chces " +
+                "opravit ?");
 
         do {
             hullToRepair = sc.nextInt();

@@ -19,7 +19,7 @@ class Graph {
     private Planet currentNode;
     private boolean gameEnd;
 
-    Graph () {
+    Graph() {
         player = new Player();
         listOfNodes = new ArrayList<>();
         gameEnd = false;
@@ -49,7 +49,8 @@ class Graph {
             } else if (planetType.isEmpty()) {
                 listOfNodes.add(new BasicPlanet(planetName, i, planetDesc, eventDesc, PlanetType.NONE));
             } else {
-                listOfNodes.add(new BasicPlanet(planetName, i, planetDesc, eventDesc, PlanetType.valueOf(planetType.toUpperCase())));
+                listOfNodes.add(new BasicPlanet(planetName, i, planetDesc, eventDesc,
+                        PlanetType.valueOf(planetType.toUpperCase())));
             }
         }
 
@@ -71,7 +72,7 @@ class Graph {
         currentNode.setVisitedEvent(true);
     }
 
-    void chooseWhatToDo() {
+    void nextChoice() {
         List<Character> options = new ArrayList<>();
         char toDoNext;
         boolean choseRight;
