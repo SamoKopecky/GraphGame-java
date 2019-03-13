@@ -4,6 +4,7 @@ public class Game {
     private GameMap map = new GameMap();
 
     private void startGame() throws Exception {
+        RandomizeItems.randomizeItems();
         map = new GameMap();
         map.generateMap();
     }
@@ -17,7 +18,6 @@ public class Game {
     public static void main(String[] args) throws Exception {
         Game game = new Game();
         game.startGame();
-
         game.gameCycle();
     }
 }

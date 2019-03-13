@@ -1,7 +1,7 @@
 package com.vutbr.homework.game;
 
 import com.vutbr.homework.nodes.*;
-import com.vutbr.homework.parser.XMLReader;
+import com.vutbr.homework.parser.XMLManipulations;
 import com.vutbr.homework.paths.Path;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -11,7 +11,7 @@ import java.util.*;
 
 class GameMap {
     private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
-    private static final String MAP_FILE = "./map.xml";
+    private static final String MAP_FILE = "./XMLs/current_map.xml";
     private static final Scanner SC = new Scanner(System.in);
     private Player player = new Player();
     private List<Planet> listOfPlanets = new ArrayList<>();
@@ -22,7 +22,7 @@ class GameMap {
         NodeList mapList;
         Element mapElement;
 
-        mapList = XMLReader.XMLParse(MAP_FILE, "//planet");
+        mapList = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML(MAP_FILE), "//planet");
 
         for (int i = 0; i < mapList.getLength(); i++) {
             mapElement = (Element) mapList.item(i);

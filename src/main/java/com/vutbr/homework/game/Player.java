@@ -4,7 +4,7 @@ public class Player {
     private double oreStorage = 10;
     private double fuel = 2;
     private double money = 300;
-    private double hull = 50;
+    private double hull = 100;
     private int numOfKeys = 0;
     private static final double MAX_FUEL = 5000;
     private static final double MAX_HULL = 100;

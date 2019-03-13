@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<types>
+    <planetTypes>
+        <planetType id="0">
+            <name>friendly</name>
+            <planetDescription>friendly planet</planetDescription>
+            <eventDescription>friendly event</eventDescription>
+        </planetType>
+        <planetType id="1">
+            <name>hostile</name>
+            <planetDescription>hostile planet</planetDescription>
+            <eventDescription>hostile event</eventDescription>
+        </planetType>
+        <planetType id="2">
+            <name>neutral</name>
+            <planetDescription>neutral planet</planetDescription>
+            <eventDescription>neutral event</eventDescription>
+        </planetType>
+        <planetType id="3">
+            <name>deadly</name>
+            <planetDescription>deadly planet</planetDescription>
+            <eventDescription>deadly event</eventDescription>
+        </planetType>
+    </planetTypes>
+    <pathTypes>
+
+    </pathTypes>
+</types>
