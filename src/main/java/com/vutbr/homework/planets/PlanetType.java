@@ -1,6 +1,6 @@
-package com.vutbr.homework.nodes;
+package com.vutbr.homework.planets;
 
-public enum PlanetTypes {
+public enum PlanetType {
 
     FRIENDLY(85, 0),
     HOSTILE(170, 20),
@@ -10,7 +10,7 @@ public enum PlanetTypes {
 
     private int minerals, hull;
 
-    PlanetTypes(int minerals, int hull) {
+    PlanetType(int minerals, int hull) {
         this.minerals = minerals;
         this.hull = hull;
     }

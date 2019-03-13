@@ -1,4 +1,4 @@
-package com.vutbr.homework.nodes;
+package com.vutbr.homework.planets;
 
 import com.vutbr.homework.game.Player;
 

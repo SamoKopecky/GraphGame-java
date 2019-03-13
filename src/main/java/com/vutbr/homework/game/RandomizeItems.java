@@ -13,29 +13,46 @@ class RandomizeItems {
         Random random = new Random();
         int randomNumber;
         Element element;
-        Document document = XMLManipulations.readFromXML("./XMLs/blank_map.xml");
+        Document document = XMLManipulations.readFromXML("./resources/blank_map.xml");
+
         NodeList map = XMLManipulations.getNodeListFromDoc(document, "//planet");
-        NodeList info = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML("./XMLs/planets_info.xml"),
-                "//planetType");
+        NodeList planetInfo = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML("./resources/planets_info.xml"), "//planetType");
+        NodeList pathInfo = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML("./resources/planets_info.xml"), "//pathType");
 
         for (int i = 0; i < map.getLength(); i++) {
             element = (Element) map.item(i);
-            Element type = (Element) element.getElementsByTagName("type").item(0);
+
+            Element planetType = (Element) element.getElementsByTagName("planetType").item(0);
             Element planetDesc = (Element) element.getElementsByTagName("planetDescription").item(0);
             Element eventDesc = (Element) element.getElementsByTagName("eventDescription").item(0);
-            if (type.getTextContent().equals("none")) {
-                randomNumber = random.nextInt(info.getLength());
-                Element infoElement = (Element) info.item(randomNumber);
-                String newType = infoElement.getElementsByTagName("name").item(0).getTextContent();
-                String newPlanetDesc = infoElement.getElementsByTagName("planetDescription").item(0).getTextContent();
-                String newEventDesc = infoElement.getElementsByTagName("eventDescription").item(0).getTextContent();
 
+            if (planetType.getTextContent().equals("none")) {
+                randomNumber = random.nextInt(planetInfo.getLength());
+                Element planetInfoElement = (Element) planetInfo.item(randomNumber);
 
-                type.setTextContent(newType);
+                String newPlanetType = planetInfoElement.getElementsByTagName("name").item(0).getTextContent();
+                String newPlanetDesc = planetInfoElement.getElementsByTagName("planetDescription").item(0).getTextContent();
+                String newEventDesc = planetInfoElement.getElementsByTagName("eventDescription").item(0).getTextContent();
+
+                planetType.setTextContent(newPlanetType);
                 planetDesc.setTextContent(newPlanetDesc);
                 eventDesc.setTextContent(newEventDesc);
             }
+            for (int j = 0; j < element.getElementsByTagName("path").getLength(); j++) {
+                Element pathType = (Element) element.getElementsByTagName("pathType").item(j);
+                Element pathDesc = (Element) element.getElementsByTagName("pathDescription").item(j);
+
+                randomNumber = random.nextInt(pathInfo.getLength());
+                Element pathInfoElement = (Element) pathInfo.item(randomNumber);
+
+                String newPathType = pathInfoElement.getElementsByTagName("name").item(0).getTextContent();
+                String newPathDesc = pathInfoElement.getElementsByTagName("pathDescription").item(0).getTextContent();
+
+                pathType.setTextContent(newPathType);
+                pathDesc.setTextContent(newPathDesc);
+            }
+
         }
-        XMLManipulations.writeToXML("./XMLs/current_map.xml", document);
+        XMLManipulations.writeToXML("./resources/current_map.xml", document);
     }
 }

@@ -1,4 +1,4 @@
-package com.vutbr.homework.nodes;
+package com.vutbr.homework.planets;
 
 import com.vutbr.homework.game.Player;
 import com.vutbr.homework.paths.Path;
@@ -22,8 +22,8 @@ public abstract class Planet {
         this.planetDesc = planetDesc;
     }
 
-    public boolean isVisitedEvent() {
-        return visitedEvent;
+    public boolean isEventNotVisited() {
+        return !visitedEvent;
     }
 
     public void setVisitedEvent(boolean visitedEvent) {

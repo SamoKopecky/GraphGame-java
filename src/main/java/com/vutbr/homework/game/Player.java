@@ -1,10 +1,10 @@
 package com.vutbr.homework.game;
 
 public class Player {
-    private int oreStorage = 10;
-    private int fuel = 2;
-    private double money = 300;
-    private int hull = 5;
+    private int mineralsStorage = 10;
+    private int fuel = 200;
+    private double money = 0;
+    private int hull = 100;
     private int numOfKeys = 0;
     private static final int MAX_FUEL = 5000;
     private static final int MAX_HULL = 100;
@@ -41,24 +41,24 @@ public class Player {
         this.hull = hull;
     }
 
+    public void deductHull(int hullToDeduct) {
+        this.hull -= hullToDeduct;
+    }
+
     public int getNumOfKeys() {
         return numOfKeys;
     }
 
-    public int getOreStorage() {
-        return oreStorage;
+    public int getMineralsStorage() {
+        return mineralsStorage;
     }
 
-    public void setOreStorage(int oreStorage) {
-        this.oreStorage = oreStorage;
+    public void setMineralsStorage(int mineralsStorage) {
+        this.mineralsStorage = mineralsStorage;
     }
 
-    public void appendOreStorage(int oreStorageToAppend) {
-        this.oreStorage += oreStorageToAppend;
-    }
-
-    public void deductHull(int hullToDeduct) {
-        this.hull -= hullToDeduct;
+    public void appendMineralsStorage(int mineralsStorageToAppend) {
+        this.mineralsStorage += mineralsStorageToAppend;
     }
 
     public void incrementNumOfKeys() {
@@ -85,12 +85,8 @@ public class Player {
         }
     }
 
-    boolean isHullBroken() {
-        return hull <= 0;
-    }
-
     public void printStatus() {
         System.out.format("palivo : %d jednotiek\nton mineralov : %d\nkredity : %.2f kreditov\nsila trupu : %d%%"
-                        + "\n" + "pocet klucov : %d/2\n", fuel, oreStorage, money, hull, numOfKeys);
+                + "\n" + "pocet klucov : %d/2\n\n", fuel, mineralsStorage, money, hull, numOfKeys);
     }
 }

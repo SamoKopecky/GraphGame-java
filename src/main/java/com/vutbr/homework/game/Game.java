@@ -1,17 +1,17 @@
 package com.vutbr.homework.game;
 
 public class Game {
-    private GameMap map = new GameMap();
+    private Graph grap;
 
     private void startGame() throws Exception {
         RandomizeItems.randomizeItems();
-        map = new GameMap();
-        map.generateMap();
+        grap = new Graph();
+        grap.generateMap();
     }
 
     private void gameCycle() {
-        while (!map.isGameFinished()) {
-            map.chooseWhatToDo();
+        while (!grap.isGameFinished()) {
+            grap.chooseWhatToDo();
         }
     }
 

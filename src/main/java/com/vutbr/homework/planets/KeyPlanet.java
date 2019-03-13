@@ -1,4 +1,4 @@
-package com.vutbr.homework.nodes;
+package com.vutbr.homework.planets;
 
 import com.vutbr.homework.game.Player;
 
@@ -11,7 +11,7 @@ public class KeyPlanet extends Planet {
     public boolean event(Player player) {
         player.printStatus();
         System.out.println(eventDesc);
-        if (!this.isVisitedEvent()) {
+        if (this.isEventNotVisited()) {
             this.visitedEvent = true;
             System.out.println("Prisiel si na planetu z klucom a ziskal si kluc !");
             player.incrementNumOfKeys();

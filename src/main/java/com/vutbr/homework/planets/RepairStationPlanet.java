@@ -1,4 +1,4 @@
-package com.vutbr.homework.nodes;
+package com.vutbr.homework.planets;
 
 import com.vutbr.homework.game.Player;
 
@@ -18,13 +18,13 @@ public class RepairStationPlanet extends Planet {
         int hullToRepair;
         int canRepair;
         double prize;
-        double moneyGained = player.getOreStorage() * ORE_CONVERSION_RATIO;
+        double moneyGained = player.getMineralsStorage() * ORE_CONVERSION_RATIO;
 
         System.out.println(eventDesc);
         if (moneyGained > 0) {
-            System.out.format("Predal si " + player.getOreStorage() + " kg surovin a ziskal si %.2f kreditov\n", moneyGained);
+            System.out.format("Predal si " + player.getMineralsStorage() + " kg surovin a ziskal si %.2f kreditov\n", moneyGained);
             player.setMoney(player.getMoney() + moneyGained);
-            player.setOreStorage(0);
+            player.setMineralsStorage(0);
         }
         player.printStatus();
 

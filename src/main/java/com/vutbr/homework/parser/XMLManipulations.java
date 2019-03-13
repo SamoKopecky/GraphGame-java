@@ -19,7 +19,6 @@ import java.io.StringWriter;
 public class XMLManipulations {
 
     public static Document readFromXML(String fileName) throws Exception {
-
         DocumentBuilder dBuilder;
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         dBuilder = dbFactory.newDocumentBuilder();
@@ -28,7 +27,7 @@ public class XMLManipulations {
         return document;
     }
 
-    public static NodeList getNodeListFromDoc(Document document, String nodeName) throws Exception{
+    public static NodeList getNodeListFromDoc(Document document, String nodeName) throws Exception {
         XPath xPath = XPathFactory.newInstance().newXPath();
         return (NodeList) xPath.compile(nodeName).evaluate(document, XPathConstants.NODESET);
     }
@@ -39,6 +38,7 @@ public class XMLManipulations {
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(document);
         StreamResult result = new StreamResult(new StringWriter());
+
         transformer.transform(source, result);
         String xmlString = result.getWriter().toString();
         byte[] bytes = xmlString.getBytes();

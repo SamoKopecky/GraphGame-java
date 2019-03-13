@@ -23,6 +23,17 @@
         </planetType>
     </planetTypes>
     <pathTypes>
-
+        <pathType id="0">
+            <name>empty</name>
+            <pathDescription>empty path</pathDescription>
+        </pathType>
+        <pathType id="1">
+            <name>friendly</name>
+            <pathDescription>friendly path</pathDescription>
+        </pathType>
+        <pathType id="2">
+            <name>dangerous</name>
+                <pathDescription>dangerous path</pathDescription>
+        </pathType>
     </pathTypes>
 </types>
