@@ -92,8 +92,10 @@
             </neighbour>
         </neighbours>
         <planetType>fuelStation</planetType>
-        <planetDescription>fuelStation</planetDescription>
-        <eventDescription>fuelStation</eventDescription>
+        <planetDescription>
+            Vyzerato ze na tejto planete su obchodnicy z palivom. Mozno ho predavaju za dobru cenu.
+        </planetDescription>
+        <eventDescription>Vytajte potrebujete niake palivo ?</eventDescription>
     </planet>
     <planet id="4">
         <name>Shakuras</name>
@@ -161,8 +163,9 @@
             </neighbour>
         </neighbours>
         <planetType>repairStation</planetType>
-        <planetDescription>repairStation</planetDescription>
-        <eventDescription>repairStation</eventDescription>
+        <planetDescription>Skenery odhaluju ze na tejto planetu su niaky obchodnicy ktory by mohli
+            kupit moje minearly a mozny by mohli opravit aj moju lod</planetDescription>
+        <eventDescription>Nerozumiem im ale kupily moje mienarly a teraz asi chcu opravit moju lod</eventDescription>
     </planet>
     <planet id="7">
         <name>Venus</name>
@@ -351,8 +354,8 @@
             </neighbour>
         </neighbours>
         <planetType>key</planetType>
-        <planetDescription>key</planetDescription>
-        <eventDescription>key</eventDescription>
+        <planetDescription>Na tejto planete sa urcite nachadza kluc ktory potrebujem</planetDescription>
+        <eventDescription>Ziskal som kluc!</eventDescription>
     </planet>
     <planet id="15">
         <name>Char</name>
@@ -402,8 +405,8 @@
             </neighbour>
         </neighbours>
         <planetType>key</planetType>
-        <planetDescription>key</planetDescription>
-        <eventDescription>key</eventDescription>
+        <planetDescription>Na tejto planete sa urcite nachadza kluc ktory potrebujem</planetDescription>
+        <eventDescription>Ziskal som kluc!</eventDescription>
     </planet>
     <planet id="18">
         <name>Azeroth</name>
@@ -419,7 +422,7 @@
             </neighbour>
         </neighbours>
         <planetType>end</planetType>
-        <planetDescription>end</planetDescription>
-        <eventDescription>end</eventDescription>
+        <planetDescription>Citim ze na tejto planete sa nachadza portal ktory potrebujem.</planetDescription>
+        <eventDescription>Toto je ono. Toto je moj portal ale na otvorenie potrebujem obidva kluce.</eventDescription>
     </planet>
 </planets>

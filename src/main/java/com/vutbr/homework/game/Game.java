@@ -4,6 +4,7 @@ public class Game {
     private Graph graph;
 
     private void startGame() throws Exception {
+        Graph.printInto();
         RandomizeItems.randomizeItems();
         graph = new Graph();
         graph.generateMap();

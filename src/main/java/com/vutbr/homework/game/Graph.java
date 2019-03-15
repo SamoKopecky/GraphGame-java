@@ -59,7 +59,9 @@ class Graph {
         for (int i = 0; i < nodeList.getLength(); i++) {
             element = (Element) nodeList.item(i);
             NodeList neighbours = element.getElementsByTagName("neighbourID");
+
             for (int j = 0; j < neighbours.getLength(); j++) {
+
                 int neighbourID = Integer.parseInt(neighbours.item(j).getTextContent());
                 int pathID = Integer.parseInt(element.getElementsByTagName("pathID").item(j).getTextContent());
                 int pathLength = Integer.parseInt(element.getElementsByTagName("length").item(j).getTextContent());
@@ -88,6 +90,7 @@ class Graph {
 
         clearConsole();
         player.printStatus();
+
         toPrint = "Nachádzaš sa na planéte : " + currentNode.getName() + "(" + currentNode.getId() + ")";
         if (currentNode.isEventNotVisited()) {
             options.add('B');
@@ -116,7 +119,7 @@ class Graph {
         }
     }
 
-    private void waitForUser() {
+    private static void waitForUser() {
         System.out.println("Stlač enter aby si pokračoval");
         SC.nextLine();
         SC.nextLine();
@@ -156,7 +159,7 @@ class Graph {
         }
     }
 
-    private void clearConsole() {
+    private static void clearConsole() {
         String currentOs = System.getProperty("os.name").toLowerCase();
 
         if (currentOs.equals("linux")) {
@@ -179,5 +182,20 @@ class Graph {
 
     boolean isGameFinished() {
         return gameFinished;
+    }
+
+    static void printInto() {
+        clearConsole();
+        System.out.print("Bol si teleportovany to druhe vesmiru. Tvojou ulohou v tejto hre je sa dostat na " +
+                "poslednu\nplanetu z nazvom Azeroth. Na tejto planete sa nachadza portal do vesmiru z ktoreho si " +
+                "prisiel. Ale\nna to aby presiel portal potrebujes 2 kluce ktore najdes na dvoch roznych planetach. " +
+                "Po najdeni\ntychto klucov mozes prest portalom a prejdes hru. Ale po ceste sa budu vyskytovat " +
+                "nebezpecenstva\nktore ti mozu poskodit trup lode. Ak tvoj sila tvojho trupu lode dosiahne 0% " +
+                "vybuchnes, ak ti dojde\npalivo nebudes moct letiet na ine planety a ostanes navzdy lietat vo " +
+                "vesmire bez sance zahrany. Na\nplnete zem sa nachadza obchod kde si mozes doplnit zasoby paliva(max" +
+                " 5000 jednotiek). Po ceste\nvesmirom tiez budes ziskavat mineraly ktore mozes predat u obchodnika " +
+                "ktory sa nachadza na marse. Tu\nsi mozes aj opravit svoju lod.\n\n");
+        SC.nextLine();
+        clearConsole();
     }
 }

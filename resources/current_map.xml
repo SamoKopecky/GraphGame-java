@@ -7,8 +7,8 @@
                 <path>
                     <pathID>0</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -16,8 +16,8 @@
                 <path>
                     <pathID>1</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>empty</pathType>
+                    <pathDescription>Vyzerato ze ked pojdem tadialto nic po ceste nenajdem</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -33,14 +33,19 @@
                 <path>
                     <pathID>2</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>hostile</planetType>
-        <planetDescription>hostile planet</planetDescription>
-        <eventDescription>hostile event</eventDescription>
+        <planetType>friendly</planetType>
+        <planetDescription>Sensory odhaluju ze na tejto planete zije inteligenta fomra zivota, ak by som na nu
+                pristaly mam velku
+                sancu ze by mi pomohli v mojej ulohe bez sance konfliktu z vysokou odmenou
+            </planetDescription>
+        <eventDescription>Ake som prepokladal ziadny konflikt nenastal a pomohli mi ziskat velke mnozstvo
+                mienralov
+            </eventDescription>
     </planet>
     <planet id="2">
         <name>Auir</name>
@@ -50,14 +55,17 @@
                 <path>
                     <pathID>3</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>friendly</planetType>
-        <planetDescription>friendly planet</planetDescription>
-        <eventDescription>friendly event</eventDescription>
+        <planetType>deadly</planetType>
+        <planetDescription>Tato planeta vyzera byt opustena a nachadzaju su tu nemale deposity mineralov, mozno sa
+                mi podari zyskat
+                tieto mienraly zadarmo
+            </planetDescription>
+        <eventDescription>Bola to past. Aspon sa mi podarilo ziskat mineraly.</eventDescription>
     </planet>
     <planet id="3">
         <name>Earth</name>
@@ -68,7 +76,7 @@
                     <pathID>4</pathID>
                     <length>2</length>
                     <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -77,7 +85,7 @@
                     <pathID>5</pathID>
                     <length>2</length>
                     <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathDescription>Vyzerato ze ked pojdem tadialto nic po ceste nenajdem</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -85,13 +93,15 @@
                 <path>
                     <pathID>6</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
         <planetType>fuelStation</planetType>
-        <planetDescription>fuelStation</planetDescription>
+        <planetDescription>
+            Vyzerato ze na tejto planete su obchodnicy z palivom. Mozno ho predavaju za dobru cenu.
+        </planetDescription>
         <eventDescription>fuelStation</eventDescription>
     </planet>
     <planet id="4">
@@ -103,13 +113,18 @@
                     <pathID>7</pathID>
                     <length>2</length>
                     <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>hostile</planetType>
-        <planetDescription>hostile planet</planetDescription>
-        <eventDescription>hostile event</eventDescription>
+        <planetType>friendly</planetType>
+        <planetDescription>Sensory odhaluju ze na tejto planete zije inteligenta fomra zivota, ak by som na nu
+                pristaly mam velku
+                sancu ze by mi pomohli v mojej ulohe bez sance konfliktu z vysokou odmenou
+            </planetDescription>
+        <eventDescription>Ake som prepokladal ziadny konflikt nenastal a pomohli mi ziskat velke mnozstvo
+                mienralov
+            </eventDescription>
     </planet>
     <planet id="5">
         <name>Neptune</name>
@@ -120,7 +135,7 @@
                     <pathID>8</pathID>
                     <length>2</length>
                     <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -129,13 +144,17 @@
                     <pathID>5</pathID>
                     <length>2</length>
                     <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>hostile</planetType>
-        <planetDescription>hostile planet</planetDescription>
-        <eventDescription>hostile event</eventDescription>
+        <planetType>neutral</planetType>
+        <planetDescription>Tato planeta vyzera byt opustena a nachadzaju su tu nemale deposity mineralov, mozno sa
+                mi podari zyskat tieto mienraly zadarmo
+            </planetDescription>
+        <eventDescription>Nastastie sa mi podarilo ziskat mienraly ale narazil som na organizmy
+                ktore mi zatial stihly poskodit trup lode, nastasatie to neni nic strasne
+            </eventDescription>
     </planet>
     <planet id="6">
         <name>Mars</name>
@@ -145,8 +164,8 @@
                 <path>
                     <pathID>4</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -155,7 +174,7 @@
                     <pathID>9</pathID>
                     <length>2</length>
                     <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -171,8 +190,8 @@
                 <path>
                     <pathID>10</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -180,8 +199,8 @@
                 <path>
                     <pathID>11</pathID>
                     <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathType>empty</pathType>
+                    <pathDescription>Vyzerato ze ked pojdem tadialto nic po ceste nenajdem</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -189,14 +208,19 @@
                 <path>
                     <pathID>17</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>deadly</planetType>
-        <planetDescription>deadly planet</planetDescription>
-        <eventDescription>deadly event</eventDescription>
+        <planetType>friendly</planetType>
+        <planetDescription>Sensory odhaluju ze na tejto planete zije inteligenta fomra zivota, ak by som na nu
+                pristaly mam velku
+                sancu ze by mi pomohli v mojej ulohe bez sance konfliktu z vysokou odmenou
+            </planetDescription>
+        <eventDescription>Ake som prepokladal ziadny konflikt nenastal a pomohli mi ziskat velke mnozstvo
+                mienralov
+            </eventDescription>
     </planet>
     <planet id="8">
         <name>Ceres</name>
@@ -206,14 +230,18 @@
                 <path>
                     <pathID>12</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>deadly</planetType>
-        <planetDescription>deadly planet</planetDescription>
-        <eventDescription>deadly event</eventDescription>
+        <planetType>hostile</planetType>
+        <planetDescription>Na tejto planete sa nachadza velmi velko mnozstvo mineralov ktore by som mohol vyuzit v
+                mojej ceste ku
+                portalu ale su velmi dobre strazene nebezpecnymi inteligen oragnizmy co moze viezt ku konfilktu
+            </planetDescription>
+        <eventDescription>Nakoniec sa mi podarilo mineraly ziskat ale len pri velkej strate stitov na moje lodi
+            </eventDescription>
     </planet>
     <planet id="9">
         <name>Uranus</name>
@@ -224,7 +252,7 @@
                     <pathID>13</pathID>
                     <length>2</length>
                     <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -232,14 +260,18 @@
                 <path>
                     <pathID>14</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>hostile</planetType>
-        <planetDescription>hostile planet</planetDescription>
-        <eventDescription>hostile event</eventDescription>
+        <planetType>neutral</planetType>
+        <planetDescription>Tato planeta vyzera byt opustena a nachadzaju su tu nemale deposity mineralov, mozno sa
+                mi podari zyskat tieto mienraly zadarmo
+            </planetDescription>
+        <eventDescription>Nastastie sa mi podarilo ziskat mienraly ale narazil som na organizmy
+                ktore mi zatial stihly poskodit trup lode, nastasatie to neni nic strasne
+            </eventDescription>
     </planet>
     <planet id="10">
         <name>Saturn</name>
@@ -249,14 +281,17 @@
                 <path>
                     <pathID>15</pathID>
                     <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>friendly</planetType>
-        <planetDescription>friendly planet</planetDescription>
-        <eventDescription>friendly event</eventDescription>
+        <planetType>deadly</planetType>
+        <planetDescription>Tato planeta vyzera byt opustena a nachadzaju su tu nemale deposity mineralov, mozno sa
+                mi podari zyskat
+                tieto mienraly zadarmo
+            </planetDescription>
+        <eventDescription>Bola to past. Aspon sa mi podarilo ziskat mineraly.</eventDescription>
     </planet>
     <planet id="11">
         <name>Jupiter</name>
@@ -267,7 +302,7 @@
                     <pathID>16</pathID>
                     <length>2</length>
                     <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -276,13 +311,17 @@
                     <pathID>17</pathID>
                     <length>2</length>
                     <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>deadly</planetType>
-        <planetDescription>deadly planet</planetDescription>
-        <eventDescription>deadly event</eventDescription>
+        <planetType>hostile</planetType>
+        <planetDescription>Na tejto planete sa nachadza velmi velko mnozstvo mineralov ktore by som mohol vyuzit v
+                mojej ceste ku
+                portalu ale su velmi dobre strazene nebezpecnymi inteligen oragnizmy co moze viezt ku konfilktu
+            </planetDescription>
+        <eventDescription>Nakoniec sa mi podarilo mineraly ziskat ale len pri velkej strate stitov na moje lodi
+            </eventDescription>
     </planet>
     <planet id="12">
         <name>Korhal</name>
@@ -293,13 +332,16 @@
                     <pathID>18</pathID>
                     <length>2</length>
                     <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>hostile</planetType>
-        <planetDescription>hostile planet</planetDescription>
-        <eventDescription>hostile event</eventDescription>
+        <planetType>deadly</planetType>
+        <planetDescription>Tato planeta vyzera byt opustena a nachadzaju su tu nemale deposity mineralov, mozno sa
+                mi podari zyskat
+                tieto mienraly zadarmo
+            </planetDescription>
+        <eventDescription>Bola to past. Aspon sa mi podarilo ziskat mineraly.</eventDescription>
     </planet>
     <planet id="13">
         <name>Mar Sara</name>
@@ -309,8 +351,8 @@
                 <path>
                     <pathID>19</pathID>
                     <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -319,13 +361,17 @@
                     <pathID>20</pathID>
                     <length>2</length>
                     <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>neutral</planetType>
-        <planetDescription>neutral planet</planetDescription>
-        <eventDescription>neutral event</eventDescription>
+        <planetType>hostile</planetType>
+        <planetDescription>Na tejto planete sa nachadza velmi velko mnozstvo mineralov ktore by som mohol vyuzit v
+                mojej ceste ku
+                portalu ale su velmi dobre strazene nebezpecnymi inteligen oragnizmy co moze viezt ku konfilktu
+            </planetDescription>
+        <eventDescription>Nakoniec sa mi podarilo mineraly ziskat ale len pri velkej strate stitov na moje lodi
+            </eventDescription>
     </planet>
     <planet id="14">
         <name>Argus</name>
@@ -335,8 +381,8 @@
                 <path>
                     <pathID>21</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
@@ -345,7 +391,7 @@
                     <pathID>22</pathID>
                     <length>2</length>
                     <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -361,14 +407,19 @@
                 <path>
                     <pathID>23</pathID>
                     <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>neutral</planetType>
-        <planetDescription>neutral planet</planetDescription>
-        <eventDescription>neutral event</eventDescription>
+        <planetType>friendly</planetType>
+        <planetDescription>Sensory odhaluju ze na tejto planete zije inteligenta fomra zivota, ak by som na nu
+                pristaly mam velku
+                sancu ze by mi pomohli v mojej ulohe bez sance konfliktu z vysokou odmenou
+            </planetDescription>
+        <eventDescription>Ake som prepokladal ziadny konflikt nenastal a pomohli mi ziskat velke mnozstvo
+                mienralov
+            </eventDescription>
     </planet>
     <planet id="16">
         <name>Bel'Shir</name>
@@ -378,14 +429,18 @@
                 <path>
                     <pathID>24</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>neutral</planetType>
-        <planetDescription>neutral planet</planetDescription>
-        <eventDescription>neutral event</eventDescription>
+        <planetType>hostile</planetType>
+        <planetDescription>Na tejto planete sa nachadza velmi velko mnozstvo mineralov ktore by som mohol vyuzit v
+                mojej ceste ku
+                portalu ale su velmi dobre strazene nebezpecnymi inteligen oragnizmy co moze viezt ku konfilktu
+            </planetDescription>
+        <eventDescription>Nakoniec sa mi podarilo mineraly ziskat ale len pri velkej strate stitov na moje lodi
+            </eventDescription>
     </planet>
     <planet id="17">
         <name>Draenor</name>
@@ -395,8 +450,8 @@
                 <path>
                     <pathID>16</pathID>
                     <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>Mozno po ceste najdem niake asteroidy</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -412,8 +467,8 @@
                 <path>
                     <pathID>13</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>Je sansa ze najdem niake asteroidy ale mozu mi sposob aj skodu</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
