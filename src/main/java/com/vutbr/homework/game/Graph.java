@@ -16,12 +16,14 @@ class Graph {
     private static int nodesVisited = 0;
     private Player player;
     private List<Planet> listOfNodes;
+    private Map<Integer, Path> listOfPaths;
     private Planet currentNode;
     private boolean gameFinished;
 
-    Graph () {
+    Graph() {
         player = new Player();
         listOfNodes = new ArrayList<>();
+        listOfPaths = new HashMap<>();
         gameFinished = false;
     }
 
@@ -49,7 +51,8 @@ class Graph {
             } else if (planetType.isEmpty()) {
                 listOfNodes.add(new BasicPlanet(planetName, i, planetDesc, eventDesc, PlanetType.NONE));
             } else {
-                listOfNodes.add(new BasicPlanet(planetName, i, planetDesc, eventDesc, PlanetType.valueOf(planetType.toUpperCase())));
+                listOfNodes.add(new BasicPlanet(planetName, i, planetDesc, eventDesc,
+                        PlanetType.valueOf(planetType.toUpperCase())));
             }
         }
 
@@ -58,16 +61,20 @@ class Graph {
             NodeList neighbours = element.getElementsByTagName("neighbourID");
             for (int j = 0; j < neighbours.getLength(); j++) {
                 int neighbourID = Integer.parseInt(neighbours.item(j).getTextContent());
+                int pathID = Integer.parseInt(element.getElementsByTagName("pathID").item(j).getTextContent());
                 int pathLength = Integer.parseInt(element.getElementsByTagName("length").item(j).getTextContent());
                 String pathDesc = element.getElementsByTagName("pathDescription").item(j).getTextContent();
                 String pathType = element.getElementsByTagName("pathType").item(j).getTextContent();
 
-                listOfNodes.get(i).setNeighbour(listOfNodes.get(neighbourID), new Path(pathLength, pathDesc,
-                        PathType.valueOf(pathType.toUpperCase())));
+                if (!listOfPaths.keySet().contains(pathID)) {
+                    listOfPaths.put(pathID, new Path(pathLength, pathDesc, PathType.valueOf(pathType.toUpperCase()),
+                            pathID));
+                }
+                listOfNodes.get(i).setNeighbour(listOfNodes.get(neighbourID), listOfPaths.get(pathID));
             }
         }
 
-        currentNode = listOfNodes.get(9);
+        currentNode = listOfNodes.get(0);
         currentNode.setVisitedEvent(true);
     }
 

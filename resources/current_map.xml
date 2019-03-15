@@ -5,6 +5,7 @@
             <neighbour>
                 <neighbourID>1</neighbourID>
                 <path>
+                    <pathID>0</pathID>
                     <length>2</length>
                     <pathType>empty</pathType>
                     <pathDescription>empty path</pathDescription>
@@ -13,6 +14,7 @@
             <neighbour>
                 <neighbourID>2</neighbourID>
                 <path>
+                    <pathID>1</pathID>
                     <length>2</length>
                     <pathType>friendly</pathType>
                     <pathDescription>friendly path</pathDescription>
@@ -29,25 +31,10 @@
             <neighbour>
                 <neighbourID>3</neighbourID>
                 <path>
+                    <pathID>2</pathID>
                     <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
-                </path>
-            </neighbour>
-        </neighbours>
-        <planetType>friendly</planetType>
-        <planetDescription>friendly planet</planetDescription>
-        <eventDescription>friendly event</eventDescription>
-    </planet>
-    <planet id="2">
-        <name>Auir</name>
-        <neighbours>
-            <neighbour>
-                <neighbourID>4</neighbourID>
-                <path>
-                    <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>empty</pathType>
+                    <pathDescription>empty path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -55,12 +42,30 @@
         <planetDescription>hostile planet</planetDescription>
         <eventDescription>hostile event</eventDescription>
     </planet>
+    <planet id="2">
+        <name>Auir</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>4</neighbourID>
+                <path>
+                    <pathID>3</pathID>
+                    <length>2</length>
+                    <pathType>friendly</pathType>
+                    <pathDescription>friendly path</pathDescription>
+                </path>
+            </neighbour>
+        </neighbours>
+        <planetType>friendly</planetType>
+        <planetDescription>friendly planet</planetDescription>
+        <eventDescription>friendly event</eventDescription>
+    </planet>
     <planet id="3">
         <name>Earth</name>
         <neighbours>
             <neighbour>
                 <neighbourID>6</neighbourID>
                 <path>
+                    <pathID>4</pathID>
                     <length>2</length>
                     <pathType>dangerous</pathType>
                     <pathDescription>dangerous path</pathDescription>
@@ -69,17 +74,19 @@
             <neighbour>
                 <neighbourID>5</neighbourID>
                 <path>
+                    <pathID>5</pathID>
                     <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathType>empty</pathType>
+                    <pathDescription>empty path</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
                 <neighbourID>7</neighbourID>
                 <path>
+                    <pathID>6</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>empty</pathType>
+                    <pathDescription>empty path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -93,15 +100,16 @@
             <neighbour>
                 <neighbourID>6</neighbourID>
                 <path>
+                    <pathID>7</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>dangerous path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>friendly</planetType>
-        <planetDescription>friendly planet</planetDescription>
-        <eventDescription>friendly event</eventDescription>
+        <planetType>hostile</planetType>
+        <planetDescription>hostile planet</planetDescription>
+        <eventDescription>hostile event</eventDescription>
     </planet>
     <planet id="5">
         <name>Neptune</name>
@@ -109,23 +117,25 @@
             <neighbour>
                 <neighbourID>8</neighbourID>
                 <path>
+                    <pathID>8</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>friendly path</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
                 <neighbourID>3</neighbourID>
                 <path>
+                    <pathID>5</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>dangerous path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>deadly</planetType>
-        <planetDescription>deadly planet</planetDescription>
-        <eventDescription>deadly event</eventDescription>
+        <planetType>hostile</planetType>
+        <planetDescription>hostile planet</planetDescription>
+        <eventDescription>hostile event</eventDescription>
     </planet>
     <planet id="6">
         <name>Mars</name>
@@ -133,17 +143,19 @@
             <neighbour>
                 <neighbourID>3</neighbourID>
                 <path>
+                    <pathID>4</pathID>
                     <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathType>empty</pathType>
+                    <pathDescription>empty path</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
                 <neighbourID>12</neighbourID>
                 <path>
+                    <pathID>9</pathID>
                     <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>friendly path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -157,14 +169,25 @@
             <neighbour>
                 <neighbourID>5</neighbourID>
                 <path>
+                    <pathID>10</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>empty</pathType>
+                    <pathDescription>empty path</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
                 <neighbourID>2</neighbourID>
                 <path>
+                    <pathID>11</pathID>
+                    <length>2</length>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>dangerous path</pathDescription>
+                </path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>11</neighbourID>
+                <path>
+                    <pathID>17</pathID>
                     <length>2</length>
                     <pathType>empty</pathType>
                     <pathDescription>empty path</pathDescription>
@@ -181,9 +204,10 @@
             <neighbour>
                 <neighbourID>9</neighbourID>
                 <path>
+                    <pathID>12</pathID>
                     <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>friendly path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -197,6 +221,7 @@
             <neighbour>
                 <neighbourID>18</neighbourID>
                 <path>
+                    <pathID>13</pathID>
                     <length>2</length>
                     <pathType>friendly</pathType>
                     <pathDescription>friendly path</pathDescription>
@@ -205,6 +230,24 @@
             <neighbour>
                 <neighbourID>10</neighbourID>
                 <path>
+                    <pathID>14</pathID>
+                    <length>2</length>
+                    <pathType>empty</pathType>
+                    <pathDescription>empty path</pathDescription>
+                </path>
+            </neighbour>
+        </neighbours>
+        <planetType>hostile</planetType>
+        <planetDescription>hostile planet</planetDescription>
+        <eventDescription>hostile event</eventDescription>
+    </planet>
+    <planet id="10">
+        <name>Saturn</name>
+        <neighbours>
+            <neighbour>
+                <neighbourID>11</neighbourID>
+                <path>
+                    <pathID>15</pathID>
                     <length>2</length>
                     <pathType>dangerous</pathType>
                     <pathDescription>dangerous path</pathDescription>
@@ -215,12 +258,22 @@
         <planetDescription>friendly planet</planetDescription>
         <eventDescription>friendly event</eventDescription>
     </planet>
-    <planet id="10">
-        <name>Saturn</name>
+    <planet id="11">
+        <name>Jupiter</name>
         <neighbours>
             <neighbour>
-                <neighbourID>11</neighbourID>
+                <neighbourID>17</neighbourID>
                 <path>
+                    <pathID>16</pathID>
+                    <length>2</length>
+                    <pathType>friendly</pathType>
+                    <pathDescription>friendly path</pathDescription>
+                </path>
+            </neighbour>
+            <neighbour>
+                <neighbourID>7</neighbourID>
+                <path>
+                    <pathID>17</pathID>
                     <length>2</length>
                     <pathType>dangerous</pathType>
                     <pathDescription>dangerous path</pathDescription>
@@ -231,39 +284,16 @@
         <planetDescription>deadly planet</planetDescription>
         <eventDescription>deadly event</eventDescription>
     </planet>
-    <planet id="11">
-        <name>Jupiter</name>
-        <neighbours>
-            <neighbour>
-                <neighbourID>17</neighbourID>
-                <path>
-                    <length>2</length>
-                    <pathType>dangerous</pathType>
-                    <pathDescription>dangerous path</pathDescription>
-                </path>
-            </neighbour>
-            <neighbour>
-                <neighbourID>7</neighbourID>
-                <path>
-                    <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
-                </path>
-            </neighbour>
-        </neighbours>
-        <planetType>friendly</planetType>
-        <planetDescription>friendly planet</planetDescription>
-        <eventDescription>friendly event</eventDescription>
-    </planet>
     <planet id="12">
         <name>Korhal</name>
         <neighbours>
             <neighbour>
                 <neighbourID>13</neighbourID>
                 <path>
+                    <pathID>18</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>friendly</pathType>
+                    <pathDescription>friendly path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -277,23 +307,25 @@
             <neighbour>
                 <neighbourID>4</neighbourID>
                 <path>
+                    <pathID>19</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>dangerous path</pathDescription>
                 </path>
             </neighbour>
             <neighbour>
                 <neighbourID>14</neighbourID>
                 <path>
+                    <pathID>20</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>dangerous path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>deadly</planetType>
-        <planetDescription>deadly planet</planetDescription>
-        <eventDescription>deadly event</eventDescription>
+        <planetType>neutral</planetType>
+        <planetDescription>neutral planet</planetDescription>
+        <eventDescription>neutral event</eventDescription>
     </planet>
     <planet id="14">
         <name>Argus</name>
@@ -301,6 +333,7 @@
             <neighbour>
                 <neighbourID>15</neighbourID>
                 <path>
+                    <pathID>21</pathID>
                     <length>2</length>
                     <pathType>empty</pathType>
                     <pathDescription>empty path</pathDescription>
@@ -309,9 +342,10 @@
             <neighbour>
                 <neighbourID>8</neighbourID>
                 <path>
+                    <pathID>22</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>dangerous path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -325,9 +359,10 @@
             <neighbour>
                 <neighbourID>16</neighbourID>
                 <path>
+                    <pathID>23</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>dangerous path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -341,15 +376,16 @@
             <neighbour>
                 <neighbourID>17</neighbourID>
                 <path>
+                    <pathID>24</pathID>
                     <length>2</length>
                     <pathType>friendly</pathType>
                     <pathDescription>friendly path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
-        <planetType>hostile</planetType>
-        <planetDescription>hostile planet</planetDescription>
-        <eventDescription>hostile event</eventDescription>
+        <planetType>neutral</planetType>
+        <planetDescription>neutral planet</planetDescription>
+        <eventDescription>neutral event</eventDescription>
     </planet>
     <planet id="17">
         <name>Draenor</name>
@@ -357,9 +393,10 @@
             <neighbour>
                 <neighbourID>11</neighbourID>
                 <path>
+                    <pathID>16</pathID>
                     <length>2</length>
-                    <pathType>empty</pathType>
-                    <pathDescription>empty path</pathDescription>
+                    <pathType>dangerous</pathType>
+                    <pathDescription>dangerous path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>
@@ -373,9 +410,10 @@
             <neighbour>
                 <neighbourID>9</neighbourID>
                 <path>
+                    <pathID>13</pathID>
                     <length>2</length>
-                    <pathType>friendly</pathType>
-                    <pathDescription>friendly path</pathDescription>
+                    <pathType>empty</pathType>
+                    <pathDescription>empty path</pathDescription>
                 </path>
             </neighbour>
         </neighbours>

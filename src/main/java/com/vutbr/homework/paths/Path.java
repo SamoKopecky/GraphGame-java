@@ -7,16 +7,18 @@ public class Path {
     private String pathDesc;
     private PathType type;
     private boolean visitedPath;
+    private int pathID;
 
     public int getLength() {
         return length;
     }
 
-    public Path(int length, String pathDesc, PathType type) {
+    public Path(int length, String pathDesc, PathType type, int pathID) {
         visitedPath = false;
         this.type = type;
         this.pathDesc = pathDesc;
         this.length = length;
+        this.pathID = pathID;
     }
 
     public String getPathDesc() {
@@ -36,5 +38,10 @@ public class Path {
             player.printStatus();
             System.out.println("cesta ta stala " + length + " paliva ale nic si nenasiel");
         }
+    }
+
+
+    public int getPathID() {
+        return pathID;
     }
 }
