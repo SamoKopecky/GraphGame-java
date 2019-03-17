@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 public class TXT {
@@ -16,13 +17,10 @@ public class TXT {
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(stringToWrite);
             bw.newLine();
-            bw.flush();
             bw.close();
-            fw.flush();
             fw.close();
         } catch (IOException e) {
-            e.getStackTrace();
-            System.out.println("can't write to file");
+            System.out.println(Arrays.toString(e.getStackTrace()));
         }
     }
 

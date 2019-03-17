@@ -92,9 +92,7 @@
             </neighbour>
         </neighbours>
         <planetType>fuelStation</planetType>
-        <planetDescription>
-            Vyzerato ze na tejto planete su obchodnicy z palivom. Mozno ho predavaju za dobru cenu.
-        </planetDescription>
+        <planetDescription>Vyzerato ze na tejto planete su obchodnicy z palivom. Mozno ho predavaju za dobru cenu.</planetDescription>
         <eventDescription>Vytajte potrebujete niake palivo ?</eventDescription>
     </planet>
     <planet id="4">

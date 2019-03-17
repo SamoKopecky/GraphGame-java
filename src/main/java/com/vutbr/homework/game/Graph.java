@@ -11,13 +11,11 @@ import java.io.IOException;
 import java.util.*;
 
 class Graph {
-    private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
-    private static String MAP_FILE;
-    private static String PATH_FILE;
-    private static final Scanner SC = new Scanner(System.in);
-    private static int nodesVisited;
-    private static String visitedPlanets;
-    private static String dir;
+    private final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
+    private final String MAP_FILE;
+    private final String PATH_FILE;
+    private final Scanner sc = new Scanner(System.in);
+    private int nodesVisited;
     private Player player;
     private List<Planet> listOfNodes;
     private Map<Integer, Path> listOfPaths;
@@ -25,11 +23,9 @@ class Graph {
     private boolean gameFinished;
 
     Graph(String dir) {
-        this.dir = dir;
         MAP_FILE = "./resources/" + dir + "/current_map.xml";
         PATH_FILE = "./resources/" + dir + "/path_taken.txt";
         nodesVisited = 0;
-        visitedPlanets = "";
         player = new Player();
         listOfNodes = new ArrayList<>();
         listOfPaths = new HashMap<>();
@@ -39,6 +35,8 @@ class Graph {
     void generateMap() {
         NodeList nodeList;
         Element element;
+
+        printIntro();
 
         nodeList = XML.getNodeListFromDoc(XML.readFromXML(MAP_FILE), "//planet");
 
@@ -111,7 +109,7 @@ class Graph {
         toPrint = toPrint.concat("\nTvoje volba je :");
         System.out.println(toPrint);
         do {
-            toDoNext = Character.toUpperCase(SC.next().charAt(0));
+            toDoNext = Character.toUpperCase(sc.next().charAt(0));
             choseRight = options.contains(toDoNext);
             if (!choseRight) {
                 System.out.println("Zvol si pismeno z listu planet na obrazovke !");
@@ -128,10 +126,10 @@ class Graph {
         }
     }
 
-    private static void waitForUser() {
+    private void waitForUser() {
         System.out.println("Stlač enter aby si pokračoval");
-        SC.nextLine();
-        SC.nextLine();
+        sc.nextLine();
+        sc.nextLine();
     }
 
     private void getNextNode() {
@@ -146,13 +144,13 @@ class Graph {
         for (Map.Entry<Planet, Path> entry : currentNode.getNeighbours().entrySet()) {
             choice.put(ALPHABET[i], entry.getKey());
             System.out.println(ALPHABET[i] + ": Na planetu " + entry.getKey().getName() + "(" + entry.getKey().getId() +
-                    ") ktora je vzdialena " + entry.getValue().getLength() + " jednotiek.\n\n" + entry.getValue().getPathDesc() + "\n");
+                    ") ktora je vzdialena " + entry.getValue().getLength() + " jednotiek.\n" + entry.getValue().getPathDesc());
             i++;
         }
         System.out.println("X: nechcem este odist z tejto planety\nTvoje volba je :");
 
         do {
-            nextNode = Character.toUpperCase(SC.next().charAt(0));
+            nextNode = Character.toUpperCase(sc.next().charAt(0));
             choseRight = choice.keySet().contains(nextNode) || nextNode == 'X';
             if (!choseRight) {
                 System.out.println("Zvol si pismeno z listu planet na obrazovke !");
@@ -173,13 +171,13 @@ class Graph {
     private static void clearConsole() {
         String currentOs = System.getProperty("os.name").toLowerCase();
 
-        if (currentOs.equals("linux")) {
+        if (currentOs.contains("linux")) {
             System.out.print("\033[H\033[2J");
             System.out.flush();
         } else if (currentOs.contains("windows")) {
             try {
-                Runtime.getRuntime().exec("cls");
-            } catch (IOException e) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } catch (IOException | InterruptedException e) {
                 System.out.println("can't clean console");
             }
         } else {
@@ -191,15 +189,11 @@ class Graph {
         return player;
     }
 
-    String getVisitedPlanets() {
-        return visitedPlanets;
-    }
-
     boolean isGameFinished() {
         return gameFinished;
     }
 
-    static void printInto() {
+    void printIntro() {
         clearConsole();
         System.out.print("Bol si teleportovany to druhe vesmiru. Tvojou ulohou v tejto hre je sa dostat na " +
                 "poslednu\nplanetu z nazvom Azeroth. Na tejto planete sa nachadza portal do vesmiru z ktoreho si " +
@@ -210,7 +204,7 @@ class Graph {
                 "vesmire bez sance zahrany. Na\nplnete zem sa nachadza obchod kde si mozes doplnit zasoby paliva(max" +
                 " 5000 jednotiek). Po ceste\nvesmirom tiez budes ziskavat mineraly ktore mozes predat u obchodnika " +
                 "ktory sa nachadza na marse. Tu\nsi mozes aj opravit svoju lod.\n\n");
-        SC.nextLine();
+        sc.nextLine();
         clearConsole();
     }
 }
