@@ -1,8 +1,9 @@
 package com.vutbr.homework.game;
 
+import com.vutbr.homework.files.TXT;
 import com.vutbr.homework.planets.*;
 import com.vutbr.homework.paths.*;
-import com.vutbr.homework.parser.XMLManipulations;
+import com.vutbr.homework.files.XML;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
@@ -11,27 +12,35 @@ import java.util.*;
 
 class Graph {
     private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toUpperCase().toCharArray();
-    private static final String MAP_FILE = "./resources/current_map.xml";
+    private static String MAP_FILE;
+    private static String PATH_FILE;
     private static final Scanner SC = new Scanner(System.in);
-    private static int nodesVisited = 0;
+    private static int nodesVisited;
+    private static String visitedPlanets;
+    private static String dir;
     private Player player;
     private List<Planet> listOfNodes;
     private Map<Integer, Path> listOfPaths;
     private Planet currentNode;
     private boolean gameFinished;
 
-    Graph() {
+    Graph(String dir) {
+        this.dir = dir;
+        MAP_FILE = "./resources/" + dir + "/current_map.xml";
+        PATH_FILE = "./resources/" + dir + "/path_taken.txt";
+        nodesVisited = 0;
+        visitedPlanets = "";
         player = new Player();
         listOfNodes = new ArrayList<>();
         listOfPaths = new HashMap<>();
         gameFinished = false;
     }
 
-    void generateMap() throws Exception {
+    void generateMap() {
         NodeList nodeList;
         Element element;
 
-        nodeList = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML(MAP_FILE), "//planet");
+        nodeList = XML.getNodeListFromDoc(XML.readFromXML(MAP_FILE), "//planet");
 
         for (int i = 0; i < nodeList.getLength(); i++) {
             element = (Element) nodeList.item(i);
@@ -76,7 +85,7 @@ class Graph {
             }
         }
 
-        currentNode = listOfNodes.get(0);
+        currentNode = listOfNodes.get(1);
         currentNode.setVisitedEvent(true);
     }
 
@@ -154,6 +163,8 @@ class Graph {
             nodesVisited++;
             clearConsole();
             Planet nextPlanet = choice.get(nextNode);
+            String stringToWrite = nodesVisited + ". " + nextPlanet.getName() + "(" + nextPlanet.getId() + ")";
+            TXT.writeToFile(stringToWrite, PATH_FILE);
             currentNode.getNeighbours().get(nextPlanet).event(player);
             currentNode = nextPlanet;
         }
@@ -165,7 +176,7 @@ class Graph {
         if (currentOs.equals("linux")) {
             System.out.print("\033[H\033[2J");
             System.out.flush();
-        } else if (currentOs.equals("windows")) {
+        } else if (currentOs.contains("windows")) {
             try {
                 Runtime.getRuntime().exec("cls");
             } catch (IOException e) {
@@ -178,6 +189,10 @@ class Graph {
 
     Player getPlayer() {
         return player;
+    }
+
+    String getVisitedPlanets() {
+        return visitedPlanets;
     }
 
     boolean isGameFinished() {

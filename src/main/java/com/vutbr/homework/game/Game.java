@@ -1,12 +1,15 @@
 package com.vutbr.homework.game;
 
+import com.vutbr.homework.files.TXT;
+
 public class Game {
     private Graph graph;
 
-    private void startGame() throws Exception {
+    private void startGame() {
         Graph.printInto();
-        RandomizeItems.randomizeItems();
-        graph = new Graph();
+        String dir = TXT.createDir();
+        RandomizeItems.randomizeItems(dir);
+        graph = new Graph(dir);
         graph.generateMap();
     }
 
@@ -16,7 +19,7 @@ public class Game {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Game game = new Game();
         game.startGame();
         game.gameCycle();

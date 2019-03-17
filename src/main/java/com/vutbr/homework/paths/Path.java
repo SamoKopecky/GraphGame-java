@@ -34,6 +34,7 @@ public class Path {
             System.out.println("Stratil si " + type.getHull() + "% trupu a ziskal si " + type.getMinerals() + " ton " +
                     "mineralov a cesta ta stala " + length + " paliva");
             visitedPath = true;
+            pathDesc = "";
         } else {
             player.printStatus();
             System.out.println("cesta ta stala " + length + " paliva ale nic si nenasiel");

@@ -33,6 +33,10 @@ public class RepairStationPlanet extends Planet {
                 "opravit ?");
 
         do {
+            while (!sc.hasNextInt()) {
+                sc.next();
+                System.out.println("zadaj iba cislo !");
+            }
             hullToRepair = sc.nextInt();
             prize = (double) hullToRepair * HULL_CONVERSION_RATIO;
             canRepair = player.canRepair(hullToRepair, prize);

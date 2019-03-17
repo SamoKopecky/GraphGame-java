@@ -3,3 +3,5 @@ TODO.txt
 graphGame.iml
 src/test/
 target/
+current_map.xml
+path_taken.txt

@@ -25,6 +25,10 @@ public class FuelStationPlanet extends Planet {
                 "kupit ?");
 
         do {
+            while (!sc.hasNextInt()) {
+                sc.next();
+                System.out.println("zadaj iba cislo !");
+            }
             numberOfUnitsToBuy = sc.nextInt();
             prize = (double) numberOfUnitsToBuy * CONVERSION_RATIO;
             canBuyFuel = player.canBuyFuel(numberOfUnitsToBuy, prize);

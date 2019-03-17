@@ -1,6 +1,6 @@
 package com.vutbr.homework.game;
 
-import com.vutbr.homework.parser.XMLManipulations;
+import com.vutbr.homework.files.XML;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -9,17 +9,17 @@ import org.w3c.dom.NodeList;
 import java.util.Random;
 
 class RandomizeItems {
-    static void randomizeItems() throws Exception {
+    static void randomizeItems(String dir) {
         Random random = new Random();
         int randomNumber;
         Element element;
-        Document document = XMLManipulations.readFromXML("./resources/blank_map.xml");
+        Document document = XML.readFromXML("./resources/blank_map.xml");
 
-        NodeList map = XMLManipulations.getNodeListFromDoc(document, "//planet");
-        NodeList planetInfo = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML("./resources" +
-                "/planets_info.xml"), "//planetType");
-        NodeList pathInfo = XMLManipulations.getNodeListFromDoc(XMLManipulations.readFromXML("./resources" +
-                "/planets_info.xml"), "//pathType");
+        NodeList map = XML.getNodeListFromDoc(document, "//planet");
+        NodeList planetInfo = XML.getNodeListFromDoc(XML.readFromXML("./resources" +
+                "/elements_info.xml"), "//planetType");
+        NodeList pathInfo = XML.getNodeListFromDoc(XML.readFromXML("./resources" +
+                "/elements_info.xml"), "//pathType");
 
         for (int i = 0; i < map.getLength(); i++) {
             element = (Element) map.item(i);
@@ -57,6 +57,6 @@ class RandomizeItems {
             }
 
         }
-        XMLManipulations.writeToXML("./resources/current_map.xml", document);
+        XML.writeToXML("./resources/" + dir + "/current_map.xml", document);
     }
 }
