@@ -9,7 +9,7 @@ public class EndPlanet extends Planet {
 
     @Override
     public boolean event(Player player) {
-        player.printStatus();
+        System.out.println(player);
         System.out.println(eventDesc);
         if (player.getNumOfKeys() == 2) {
             System.out.println("Gratulujem dokoncil si hru !");

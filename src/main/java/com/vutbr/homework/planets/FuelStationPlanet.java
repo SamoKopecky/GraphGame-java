@@ -19,7 +19,7 @@ public class FuelStationPlanet extends Planet {
         int canBuyFuel;
         double prize;
 
-        player.printStatus();
+        System.out.println(player);
         System.out.println(eventDesc);
         System.out.println("Jedna jednotka paliva stoji " + CONVERSION_RATIO + " kreditov\nKolko jednotiek chces " +
                 "kupit ?");
@@ -34,7 +34,7 @@ public class FuelStationPlanet extends Planet {
             canBuyFuel = player.canBuyFuel(numberOfUnitsToBuy, prize);
             switch (canBuyFuel) {
                 case 1:
-                    System.out.format("Nemozes mat viac paliva ako %.0f!\n", +Player.MAX_FUEL());
+                    System.out.format("Nemozes mat viac paliva ako %.0f!\n", Player.getMAX_FUEL());
                     break;
                 case 2:
                     System.out.print("Nemas dost penazi !\n");

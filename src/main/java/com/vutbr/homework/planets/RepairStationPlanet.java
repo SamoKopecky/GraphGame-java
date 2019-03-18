@@ -27,8 +27,8 @@ public class RepairStationPlanet extends Planet {
             player.setMoney(player.getMoney() + moneyGained);
             player.setMineralsStorage(0);
         }
-        player.printStatus();
 
+        System.out.println(player);
         System.out.println("Jedno percento trupu stoji " + HULL_CONVERSION_RATIO + " kreditov\nKolko percent chces " +
                 "opravit ?");
 
@@ -42,7 +42,7 @@ public class RepairStationPlanet extends Planet {
             canRepair = player.canRepair(hullToRepair, prize);
             switch (canRepair) {
                 case 1:
-                    System.out.format("Nemozes sa opravit viac ako %.0f%%!\n", Player.MAX_HULL());
+                    System.out.format("Nemozes sa opravit viac ako %.0f%%!\n", Player.getMAX_HULL());
                     break;
                 case 2:
                     System.out.print("Nemas dost penazi !\n");

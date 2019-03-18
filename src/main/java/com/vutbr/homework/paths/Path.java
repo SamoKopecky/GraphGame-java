@@ -21,6 +21,10 @@ public class Path {
         this.pathID = pathID;
     }
 
+    public boolean isVisitedPath() {
+        return visitedPath;
+    }
+
     public String getPathDesc() {
         return pathDesc;
     }
@@ -30,19 +34,14 @@ public class Path {
         if (!visitedPath) {
             player.setHull(player.getHull() - type.getHull());
             player.appendMineralsStorage(type.getMinerals());
-            player.printStatus();
+            System.out.println(player);
             System.out.println("Stratil si " + type.getHull() + "% trupu a ziskal si " + type.getMinerals() + " ton " +
                     "mineralov a cesta ta stala " + length + " paliva");
             visitedPath = true;
             pathDesc = "";
         } else {
-            player.printStatus();
+            System.out.println(player);
             System.out.println("cesta ta stala " + length + " paliva ale nic si nenasiel");
         }
-    }
-
-
-    public int getPathID() {
-        return pathID;
     }
 }

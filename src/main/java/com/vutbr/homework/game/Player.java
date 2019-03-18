@@ -9,11 +9,11 @@ public class Player {
     private static final int MAX_FUEL = 5000;
     private static final int MAX_HULL = 100;
 
-    public static double MAX_FUEL() {
+    public static double getMAX_FUEL() {
         return MAX_FUEL;
     }
 
-    public static double MAX_HULL() {
+    public static double getMAX_HULL() {
         return MAX_HULL;
     }
 
@@ -85,9 +85,10 @@ public class Player {
         }
     }
 
-    public void printStatus() {
-        System.out.format("palivo : %d jednotiek\nton mineralov : %d\nkredity : %.2f kreditov\nsila trupu : %d%%"
-                + "\n" + "pocet klucov : %d/2\n\n", fuel, mineralsStorage, money, hull, numOfKeys);
+    @Override
+    public String toString() {
+        return String.format("palivo : %d jednotiek\nton mineralov : %d\nkredity : %.2f kreditov\nsila trupu : %d%%"
+                + "\n" + "pocet klucov : %d/2\n", fuel, mineralsStorage, money, hull, numOfKeys);
     }
 
     boolean isPlayerDead() {

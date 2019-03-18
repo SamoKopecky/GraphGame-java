@@ -161,8 +161,7 @@
             </neighbour>
         </neighbours>
         <planetType>repairStation</planetType>
-        <planetDescription>Skenery odhaluju ze na tejto planetu su niaky obchodnicy ktory by mohli
-            kupit moje minearly a mozny by mohli opravit aj moju lod</planetDescription>
+        <planetDescription>Skenery odhaluju ze na tejto planetu su niaky obchodnicy ktory by mohli kupit moje minearly a mozny by mohli opravit aj moju lod</planetDescription>
         <eventDescription>Nerozumiem im ale kupily moje mienarly a teraz asi chcu opravit moju lod</eventDescription>
     </planet>
     <planet id="7">

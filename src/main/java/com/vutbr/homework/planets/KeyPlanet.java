@@ -9,7 +9,7 @@ public class KeyPlanet extends Planet {
 
     @Override
     public boolean event(Player player) {
-        player.printStatus();
+        System.out.println(player);
         if (this.isEventNotVisited()) {
             this.visitedEvent = true;
             System.out.println(eventDesc);

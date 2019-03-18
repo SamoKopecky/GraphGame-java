@@ -14,8 +14,8 @@ public class BasicPlanet extends Planet {
     public boolean event(Player player) {
         player.appendMineralsStorage(type.getMinerals());
         player.deductHull(type.getHull());
-        player.printStatus();
 
+        System.out.println(player);
         System.out.println(eventDesc);
         System.out.println("Ziskal si " + type.getMinerals() + " mineralov a startil si " + type.getHull() + "% trupu");
         

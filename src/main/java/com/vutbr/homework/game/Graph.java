@@ -1,5 +1,8 @@
 package com.vutbr.homework.game;
 
+import java.util.Arrays;
+
+
 import com.vutbr.homework.files.TXT;
 import com.vutbr.homework.planets.*;
 import com.vutbr.homework.paths.*;
@@ -96,7 +99,7 @@ class Graph {
         options.add('A');
 
         clearConsole();
-        player.printStatus();
+        System.out.println(player);
 
         toPrint = "Nachádzaš sa na planéte : " + currentNode.getName() + "(" + currentNode.getId() + ")";
         if (currentNode.isEventNotVisited()) {
@@ -126,12 +129,6 @@ class Graph {
         }
     }
 
-    private void waitForUser() {
-        System.out.println("Stlač enter aby si pokračoval");
-        sc.nextLine();
-        sc.nextLine();
-    }
-
     private void getNextNode() {
         char nextNode;
         int i = 0;
@@ -139,7 +136,7 @@ class Graph {
         Map<Character, Planet> choice = new HashMap<>();
 
         clearConsole();
-        player.printStatus();
+        System.out.println(player);
         System.out.println("Mozes letiet na :");
         for (Map.Entry<Planet, Path> entry : currentNode.getNeighbours().entrySet()) {
             choice.put(ALPHABET[i], entry.getKey());
@@ -185,15 +182,13 @@ class Graph {
         }
     }
 
-    Player getPlayer() {
-        return player;
+    private void waitForUser() {
+        System.out.println("Stlač enter aby si pokračoval");
+        sc.nextLine();
+        sc.nextLine();
     }
 
-    boolean isGameFinished() {
-        return gameFinished;
-    }
-
-    void printIntro() {
+    private void printIntro() {
         clearConsole();
         System.out.print("Bol si teleportovany to druhe vesmiru. Tvojou ulohou v tejto hre je sa dostat na " +
                 "poslednu\nplanetu z nazvom Azeroth. Na tejto planete sa nachadza portal do vesmiru z ktoreho si " +
@@ -206,5 +201,13 @@ class Graph {
                 "ktory sa nachadza na marse. Tu\nsi mozes aj opravit svoju lod.\n\n");
         sc.nextLine();
         clearConsole();
+    }
+
+    Player getPlayer() {
+        return player;
+    }
+
+    boolean isGameFinished() {
+        return gameFinished;
     }
 }
