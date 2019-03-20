@@ -306,15 +306,6 @@
         <name>Mar Sara</name>
         <neighbours>
             <neighbour>
-                <neighbourID>4</neighbourID>
-                <path>
-                    <pathID>19</pathID>
-                    <length>100</length>
-                    <pathType>none</pathType>
-                    <pathDescription>none</pathDescription>
-                </path>
-            </neighbour>
-            <neighbour>
                 <neighbourID>14</neighbourID>
                 <path>
                     <pathID>20</pathID>
@@ -357,6 +348,15 @@
     <planet id="15">
         <name>Char</name>
         <neighbours>
+            <neighbour>
+                <neighbourID>4</neighbourID>
+                <path>
+                    <pathID>19</pathID>
+                    <length>30</length>
+                    <pathType>none</pathType>
+                    <pathDescription>none</pathDescription>
+                </path>
+            </neighbour>
             <neighbour>
                 <neighbourID>16</neighbourID>
                 <path>
