@@ -7,7 +7,7 @@
                 <neighbourID>1</neighbourID>
                 <path>
                     <pathID>0</pathID>
-                    <length>2</length>
+                    <length>25</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -16,7 +16,7 @@
                 <neighbourID>2</neighbourID>
                 <path>
                     <pathID>1</pathID>
-                    <length>2</length>
+                    <length>25</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -33,7 +33,7 @@
                 <neighbourID>3</neighbourID>
                 <path>
                     <pathID>2</pathID>
-                    <length>2</length>
+                    <length>30</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -50,7 +50,7 @@
                 <neighbourID>4</neighbourID>
                 <path>
                     <pathID>3</pathID>
-                    <length>2</length>
+                    <length>50</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -67,7 +67,7 @@
                 <neighbourID>6</neighbourID>
                 <path>
                     <pathID>4</pathID>
-                    <length>2</length>
+                    <length>10</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -76,7 +76,7 @@
                 <neighbourID>5</neighbourID>
                 <path>
                     <pathID>5</pathID>
-                    <length>2</length>
+                    <length>20</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -85,7 +85,7 @@
                 <neighbourID>7</neighbourID>
                 <path>
                     <pathID>6</pathID>
-                    <length>2</length>
+                    <length>75</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -102,7 +102,7 @@
                 <neighbourID>6</neighbourID>
                 <path>
                     <pathID>7</pathID>
-                    <length>2</length>
+                    <length>30</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -119,7 +119,7 @@
                 <neighbourID>8</neighbourID>
                 <path>
                     <pathID>8</pathID>
-                    <length>2</length>
+                    <length>45</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -128,7 +128,7 @@
                 <neighbourID>3</neighbourID>
                 <path>
                     <pathID>5</pathID>
-                    <length>2</length>
+                    <length>20</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -145,7 +145,7 @@
                 <neighbourID>3</neighbourID>
                 <path>
                     <pathID>4</pathID>
-                    <length>2</length>
+                    <length>10</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -154,7 +154,7 @@
                 <neighbourID>12</neighbourID>
                 <path>
                     <pathID>9</pathID>
-                    <length>2</length>
+                    <length>45</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -171,7 +171,7 @@
                 <neighbourID>5</neighbourID>
                 <path>
                     <pathID>10</pathID>
-                    <length>2</length>
+                    <length>30</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -180,7 +180,7 @@
                 <neighbourID>2</neighbourID>
                 <path>
                     <pathID>11</pathID>
-                    <length>2</length>
+                    <length>25</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -189,7 +189,7 @@
                 <neighbourID>11</neighbourID>
                 <path>
                     <pathID>17</pathID>
-                    <length>2</length>
+                    <length>150</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -206,7 +206,7 @@
                 <neighbourID>9</neighbourID>
                 <path>
                     <pathID>12</pathID>
-                    <length>2</length>
+                    <length>50</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -223,7 +223,7 @@
                 <neighbourID>18</neighbourID>
                 <path>
                     <pathID>13</pathID>
-                    <length>2</length>
+                    <length>10</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -232,7 +232,7 @@
                 <neighbourID>10</neighbourID>
                 <path>
                     <pathID>14</pathID>
-                    <length>2</length>
+                    <length>75</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -249,7 +249,7 @@
                 <neighbourID>11</neighbourID>
                 <path>
                     <pathID>15</pathID>
-                    <length>2</length>
+                    <length>50</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -266,7 +266,7 @@
                 <neighbourID>17</neighbourID>
                 <path>
                     <pathID>16</pathID>
-                    <length>2</length>
+                    <length>200</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -275,7 +275,7 @@
                 <neighbourID>7</neighbourID>
                 <path>
                     <pathID>17</pathID>
-                    <length>2</length>
+                    <length>150</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -292,7 +292,7 @@
                 <neighbourID>13</neighbourID>
                 <path>
                     <pathID>18</pathID>
-                    <length>2</length>
+                    <length>50</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -309,7 +309,7 @@
                 <neighbourID>4</neighbourID>
                 <path>
                     <pathID>19</pathID>
-                    <length>2</length>
+                    <length>100</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -318,7 +318,7 @@
                 <neighbourID>14</neighbourID>
                 <path>
                     <pathID>20</pathID>
-                    <length>2</length>
+                    <length>60</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -335,7 +335,7 @@
                 <neighbourID>15</neighbourID>
                 <path>
                     <pathID>21</pathID>
-                    <length>2</length>
+                    <length>25</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -344,7 +344,7 @@
                 <neighbourID>8</neighbourID>
                 <path>
                     <pathID>22</pathID>
-                    <length>2</length>
+                    <length>40</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -361,7 +361,7 @@
                 <neighbourID>16</neighbourID>
                 <path>
                     <pathID>23</pathID>
-                    <length>2</length>
+                    <length>210</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -378,7 +378,7 @@
                 <neighbourID>17</neighbourID>
                 <path>
                     <pathID>24</pathID>
-                    <length>2</length>
+                    <length>30</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -395,7 +395,7 @@
                 <neighbourID>11</neighbourID>
                 <path>
                     <pathID>16</pathID>
-                    <length>2</length>
+                    <length>200</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>
@@ -412,7 +412,7 @@
                 <neighbourID>9</neighbourID>
                 <path>
                     <pathID>13</pathID>
-                    <length>2</length>
+                    <length>10</length>
                     <pathType>none</pathType>
                     <pathDescription>none</pathDescription>
                 </path>

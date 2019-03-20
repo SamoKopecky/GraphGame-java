@@ -86,7 +86,7 @@ class Graph {
             }
         }
 
-        currentNode = listOfNodes.get(1);
+        currentNode = listOfNodes.get(0);
         currentNode.setVisitedEvent(true);
     }
 
