@@ -6,7 +6,8 @@ public class Game {
     private Graph graph;
 
     private void startGame() {
-        String dir = TXT.createDir();
+        TXT txt = new TXT();
+        String dir = txt.createDir();
         RandomizeItems.randomizeItems(dir);
         graph = new Graph(dir);
         graph.generateMap();

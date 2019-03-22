@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class TXT {
-    public static void writeToFile(String stringToWrite, String fileName) {
+    public void writeToFile(String stringToWrite, String fileName) {
         File file = new File(fileName);
         try {
             FileWriter fw = new FileWriter(file, true);
@@ -24,7 +24,7 @@ public class TXT {
         }
     }
 
-    public static String createDir() {
+    public String createDir() {
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         Date date = new Date();
         String formattedDate = dateFormat.format(date);

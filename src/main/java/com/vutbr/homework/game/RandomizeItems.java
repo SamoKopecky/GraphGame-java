@@ -10,15 +10,16 @@ import java.util.Random;
 
 class RandomizeItems {
     static void randomizeItems(String dir) {
+        XML xml = new XML();
         Random random = new Random();
         int randomNumber;
         Element element;
-        Document document = XML.readFromXML("./resources/blank_map.xml");
+        Document document = xml.readFromXML("./resources/blank_map.xml");
 
-        NodeList map = XML.getNodeListFromDoc(document, "//planet");
-        NodeList planetInfo = XML.getNodeListFromDoc(XML.readFromXML("./resources" +
+        NodeList map = xml.getNodeListFromDoc(document, "//planet");
+        NodeList planetInfo = xml.getNodeListFromDoc(xml.readFromXML("./resources" +
                 "/elements_info.xml"), "//planetType");
-        NodeList pathInfo = XML.getNodeListFromDoc(XML.readFromXML("./resources" +
+        NodeList pathInfo = xml.getNodeListFromDoc(xml.readFromXML("./resources" +
                 "/elements_info.xml"), "//pathType");
 
         for (int i = 0; i < map.getLength(); i++) {
@@ -57,6 +58,6 @@ class RandomizeItems {
             }
 
         }
-        XML.writeToXML("./resources/" + dir + "/current_map.xml", document);
+        xml.writeToXML("./resources/" + dir + "/current_map.xml", document);
     }
 }

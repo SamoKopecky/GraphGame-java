@@ -1,8 +1,5 @@
 package com.vutbr.homework.game;
 
-import java.util.Arrays;
-
-
 import com.vutbr.homework.files.TXT;
 import com.vutbr.homework.planets.*;
 import com.vutbr.homework.paths.*;
@@ -20,28 +17,30 @@ class Graph {
     private final Scanner sc = new Scanner(System.in);
     private int nodesVisited;
     private Player player;
-    private List<Planet> listOfNodes;
-    private Map<Integer, Path> listOfPaths;
     private Planet currentNode;
     private boolean gameFinished;
+    private XML xml;
+    private TXT txt;
 
     Graph(String dir) {
+        xml = new XML();
+        txt = new TXT();
         MAP_FILE = "./resources/" + dir + "/current_map.xml";
         PATH_FILE = "./resources/" + dir + "/path_taken.txt";
         nodesVisited = 0;
         player = new Player();
-        listOfNodes = new ArrayList<>();
-        listOfPaths = new HashMap<>();
         gameFinished = false;
     }
 
     void generateMap() {
+        List<Planet> listOfNodes = new ArrayList<>();
+        Map<Integer, Path> listOfPaths = new HashMap<>();
         NodeList nodeList;
         Element element;
 
         printIntro();
 
-        nodeList = XML.getNodeListFromDoc(XML.readFromXML(MAP_FILE), "//planet");
+        nodeList = xml.getNodeListFromDoc(xml.readFromXML(MAP_FILE), "//planet");
 
         for (int i = 0; i < nodeList.getLength(); i++) {
             element = (Element) nodeList.item(i);
@@ -159,7 +158,7 @@ class Graph {
             clearConsole();
             Planet nextPlanet = choice.get(nextNode);
             String stringToWrite = nodesVisited + ". " + nextPlanet.getName() + "(" + nextPlanet.getId() + ")";
-            TXT.writeToFile(stringToWrite, PATH_FILE);
+            txt.writeToFile(stringToWrite, PATH_FILE);
             currentNode.getNeighbours().get(nextPlanet).event(player);
             currentNode = nextPlanet;
         }
@@ -209,5 +208,10 @@ class Graph {
 
     boolean isGameFinished() {
         return gameFinished;
+    }
+
+
+    public TXT getTxt() {
+        return txt;
     }
 }

@@ -23,7 +23,7 @@ import java.io.StringWriter;
 
 public class XML {
 
-    public static Document readFromXML(String fileName) {
+    public Document readFromXML(String fileName) {
         DocumentBuilder dBuilder;
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         Document document = null;
@@ -38,7 +38,7 @@ public class XML {
         return document;
     }
 
-    public static NodeList getNodeListFromDoc(Document document, String nodeName) {
+    public NodeList getNodeListFromDoc(Document document, String nodeName) {
         XPath xPath = XPathFactory.newInstance().newXPath();
         NodeList nodeList = null;
         try {
@@ -50,7 +50,7 @@ public class XML {
         return nodeList;
     }
 
-    public static void writeToXML(String fileName, Document document) {
+    public void writeToXML(String fileName, Document document) {
         try {
             FileOutputStream fos = new FileOutputStream(fileName);
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
