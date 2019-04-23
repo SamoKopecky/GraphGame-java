@@ -22,10 +22,6 @@ public abstract class Planet {
         this.planetDesc = planetDesc;
     }
 
-    public void setPlanetDesc(String planetDesc) {
-        this.planetDesc = planetDesc;
-    }
-
     public boolean isEventNotVisited() {
         return !visitedEvent;
     }

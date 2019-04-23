@@ -1,4 +1,4 @@
-package com.vutbr.homework.files;
+package com.vutbr.homework.io;
 
 import java.io.BufferedWriter;
 import java.io.File;

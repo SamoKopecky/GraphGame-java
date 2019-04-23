@@ -1,7 +1,6 @@
-package com.vutbr.homework.files;
+package com.vutbr.homework.io;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -65,7 +64,7 @@ public class XML {
             fos.close();
         } catch (Exception e) {
             e.getStackTrace();
-            System.out.println("writing to files failed");
+            System.out.println("writing to io failed");
         }
     }
 }

@@ -20,11 +20,6 @@ public class Path {
         this.length = length;
         this.pathID = pathID;
     }
-
-    public boolean isVisitedPath() {
-        return visitedPath;
-    }
-
     public String getPathDesc() {
         return pathDesc;
     }

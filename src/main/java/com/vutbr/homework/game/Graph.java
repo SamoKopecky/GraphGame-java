@@ -1,9 +1,9 @@
 package com.vutbr.homework.game;
 
-import com.vutbr.homework.files.TXT;
+import com.vutbr.homework.io.TXT;
 import com.vutbr.homework.planets.*;
 import com.vutbr.homework.paths.*;
-import com.vutbr.homework.files.XML;
+import com.vutbr.homework.io.XML;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
@@ -19,12 +19,8 @@ class Graph {
     private Player player;
     private Planet currentNode;
     private boolean gameFinished;
-    private XML xml;
-    private TXT txt;
 
     Graph(String dir) {
-        xml = new XML();
-        txt = new TXT();
         MAP_FILE = "./resources/" + dir + "/current_map.xml";
         PATH_FILE = "./resources/" + dir + "/path_taken.txt";
         nodesVisited = 0;
@@ -33,12 +29,11 @@ class Graph {
     }
 
     void generateMap() {
+        XML xml = new XML();
         List<Planet> listOfNodes = new ArrayList<>();
         Map<Integer, Path> listOfPaths = new HashMap<>();
         NodeList nodeList;
         Element element;
-
-        printIntro();
 
         nodeList = xml.getNodeListFromDoc(xml.readFromXML(MAP_FILE), "//planet");
 
@@ -93,23 +88,22 @@ class Graph {
         List<Character> options = new ArrayList<>();
         char toDoNext;
         boolean choseRight;
-        String toPrint;
+        StringBuilder sb = new StringBuilder();
 
         options.add('A');
 
         clearConsole();
         System.out.println(player);
-
-        toPrint = "Nachádzaš sa na planéte : " + currentNode.getName() + "(" + currentNode.getId() + ")";
+        sb.append("Nachádzaš sa na planéte : " + currentNode.getName() + "(" + currentNode.getId() + ")");
         if (currentNode.isEventNotVisited()) {
             options.add('B');
-            toPrint = toPrint.concat("\n" + currentNode.getPlanetDesc() + "\n"
+            sb.append("\n" + currentNode.getPlanetDesc() + "\n"
                     + "Čo spravíš ďalej ?\nA: odleť na daľšiu planétu" + "\nB: pristáň na planétu");
         } else {
-            toPrint = toPrint.concat("\nČo spravíš ďalej ?\nA: odleť na daľšiu planétu");
+            sb.append("\nČo spravíš ďalej ?\nA: odleť na daľšiu planétu");
         }
-        toPrint = toPrint.concat("\nTvoje volba je :");
-        System.out.println(toPrint);
+        sb.append("\nTvoje volba je :");
+        System.out.println(sb.toString());
         do {
             toDoNext = Character.toUpperCase(sc.next().charAt(0));
             choseRight = options.contains(toDoNext);
@@ -154,17 +148,22 @@ class Graph {
         } while (!choseRight);
 
         if (nextNode != 'X') {
-            nodesVisited++;
-            clearConsole();
-            Planet nextPlanet = choice.get(nextNode);
-            String stringToWrite = nodesVisited + ". " + nextPlanet.getName() + "(" + nextPlanet.getId() + ")";
-            txt.writeToFile(stringToWrite, PATH_FILE);
-            currentNode.getNeighbours().get(nextPlanet).event(player);
-            currentNode = nextPlanet;
+            moveToNextPlanet(choice, nextNode);
         }
     }
 
-    private static void clearConsole() {
+    private void moveToNextPlanet(Map<Character, Planet> choice, char nextNode) {
+        clearConsole();
+        TXT txt = new TXT();
+        nodesVisited++;
+        Planet nextPlanet = choice.get(nextNode);
+        String stringToWrite = nodesVisited + ". " + nextPlanet.getName() + "(" + nextPlanet.getId() + ")";
+        txt.writeToFile(stringToWrite, PATH_FILE);
+        currentNode.getNeighbours().get(nextPlanet).event(player);
+        currentNode = nextPlanet;
+    }
+
+    void clearConsole() {
         String currentOs = System.getProperty("os.name").toLowerCase();
 
         if (currentOs.contains("linux")) {
@@ -187,9 +186,9 @@ class Graph {
         sc.nextLine();
     }
 
-    private void printIntro() {
+    String getIntro() {
         clearConsole();
-        System.out.print("Bol si teleportovany to druhe vesmiru. Tvojou ulohou v tejto hre je sa dostat na " +
+        return "Bol si teleportovany to druhe vesmiru. Tvojou ulohou v tejto hre je sa dostat na " +
                 "poslednu\nplanetu z nazvom Azeroth. Na tejto planete sa nachadza portal do vesmiru z ktoreho si " +
                 "prisiel. Ale\nna to aby presiel portal potrebujes 2 kluce ktore najdes na dvoch roznych planetach. " +
                 "Po najdeni\ntychto klucov mozes prest portalom a prejdes hru. Ale po ceste sa budu vyskytovat " +
@@ -197,9 +196,7 @@ class Graph {
                 "vybuchnes, ak ti dojde\npalivo nebudes moct letiet na ine planety a ostanes navzdy lietat vo " +
                 "vesmire bez sance zahrany. Na\nplnete zem sa nachadza obchod kde si mozes doplnit zasoby paliva(max" +
                 " 5000 jednotiek). Po ceste\nvesmirom tiez budes ziskavat mineraly ktore mozes predat u obchodnika " +
-                "ktory sa nachadza na marse. Tu\nsi mozes aj opravit svoju lod.\n\n");
-        sc.nextLine();
-        clearConsole();
+                "ktory sa nachadza na marse. Tu\nsi mozes aj opravit svoju lod.\n\n";
     }
 
     Player getPlayer() {
@@ -210,8 +207,4 @@ class Graph {
         return gameFinished;
     }
 
-
-    public TXT getTxt() {
-        return txt;
-    }
 }

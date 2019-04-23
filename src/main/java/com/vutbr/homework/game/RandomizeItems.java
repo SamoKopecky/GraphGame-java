@@ -1,6 +1,6 @@
 package com.vutbr.homework.game;
 
-import com.vutbr.homework.files.XML;
+import com.vutbr.homework.io.XML;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -9,7 +9,7 @@ import org.w3c.dom.NodeList;
 import java.util.Random;
 
 class RandomizeItems {
-    static void randomizeItems(String dir) {
+    void randomizeItems(String dir) {
         XML xml = new XML();
         Random random = new Random();
         int randomNumber;
