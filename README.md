@@ -1,7 +1,10 @@
 # GraphGame-java
 
-A graph game made as a homework for school.
+- A graph game made as a homework for school
+- Maven and java required to build
 
-Java is required to play.
-The folder /resources needs to be in the same folder as the .jar file or in the working directory.
-Works only only on linux systems.
+## How to compile
+- In the root directory of the project run `mvn compile` and `mvn package` to package into a jar file
+
+## How to run
+- In the root directory of the project run `java -jar target/GraphGame-1.0.jar`

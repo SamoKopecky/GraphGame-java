@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>	
 
   <groupId>com.vutbr.homework</groupId>
-  <artifactId>graph-game</artifactId>
+  <artifactId>GraphGame</artifactId>
   <version>1.0</version>
 
-  <name>graph-game</name>
+  <name>GraphGame</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -102,6 +102,30 @@
                   <target>8</target>
               </configuration>
           </plugin>
+          <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target</outputDirectory>
+                            <includeEmptyDirs>true</includeEmptyDirs>
+                            <resources>
+                                <resource>
+                                    <targetPath>${basedir}/target/resources</targetPath>
+                                    <directory>resources</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
       </plugins>
   </build>
 </project>
